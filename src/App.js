@@ -29,6 +29,7 @@ const App = () => {
       let data = await response.json();
       console.log(data);
       setRecipes(data.hits)
+      console.log (data.hits)
     } catch (err) {
       console.log(err)
     }

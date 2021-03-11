@@ -22,6 +22,7 @@ function Recipe({ recipe }) {
 
             <div style={{ display: showRecipe ? 'block' : 'none' }} className="show-recipe-window" >
                 <ShowRecipe
+                    setShowRecipe={setShowRecipe}
                     recipe={recipe}
                 />
             </div>

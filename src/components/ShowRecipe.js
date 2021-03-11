@@ -1,7 +1,10 @@
 import React from 'react';
-import Ingredients from './Ingredients';
 
-function ShowRecipe({ recipe }) {
+function ShowRecipe({ recipe, setShowRecipe }) {
+  function setDisplayToNone(){
+      setShowRecipe(false);
+  
+  }
   return (
     <div className="show-recipe">
       <h1 className="show-recipe-header">{recipe.label}</h1>
@@ -9,11 +12,11 @@ function ShowRecipe({ recipe }) {
 
       <p className="show-recipe-calories">Calories: {(recipe.calories).toFixed(2)}</p>
       <ol className="show-recipe-ingredients">
-        {recipe.ingredients.map((ingredient) => {
-           <Ingredients ingredients={ingredient} key={recipe.calories} />
-        }
+        {recipe.ingredientLines.map((ingredient) =>
+          <li>{ingredient}</li>
         )}
       </ol>
+      <button onClick = {setDisplayToNone}>Back to recipes</button>
     </div>
   )
 }
