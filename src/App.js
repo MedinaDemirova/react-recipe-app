@@ -14,12 +14,18 @@ const App = () => {
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
   const [query, setQuery] = useState('pizza');
+  const [mealQuery, setMealQuery] = useState('');
+  const [typeQuery, setTypeQuery] = useState('');
+  const [counter, setCounter] = useState(10);
 
-  useEffect(() => { getData() }, [query]);
+  useEffect(() => { getData() }, [query, counter]);
+  useEffect(() => { filterRecipesMealType() }, [mealQuery]);
+  useEffect(() => { filterRecipesType() }, [typeQuery]);
+
 
   const getData = async () => {
     try {
-      const response = await fetch(`https://api.edamam.com/search?q=${query}&app_id=${YOUR_APP_ID}&app_key=${API_KEY}`);
+      const response = await fetch(`https://api.edamam.com/search?q=${query}&app_id=${YOUR_APP_ID}&app_key=${API_KEY}&from=0&to=${counter}`)
       let data = await response.json();
       console.log(data);
       setRecipes(data.hits)
@@ -28,6 +34,17 @@ const App = () => {
     }
   }
 
+  const filterRecipesMealType = () => {
+    setRecipes(recipes.filter((rec) => {
+      (rec.recipe.mealType && rec.recipe.mealType.includes(mealQuery.toLocaleLowerCase()))
+    }));
+  }
+
+  const filterRecipesType = () => {
+    setRecipes(recipes.filter((rec) => {
+      (rec.recipe.dishType && rec.recipe.dishType.includes(typeQuery.toLocaleLowerCase()))
+    }));
+  }
 
   return (
     <div className="App">
@@ -39,10 +56,22 @@ const App = () => {
         setQuery={setQuery}
       />
 
-      <SearchByMeal />
-      <SearchByType />
+      <SearchByMeal
+        mealQuery={mealQuery}
+        setMealQuery={setMealQuery}
+        recipes={recipes}
+        setRecipes={setRecipes} />
 
-      <Recipes recipes={recipes} />
+      <SearchByType
+        typeQuery={typeQuery}
+        setTypeQuery={setTypeQuery}
+        recipes={recipes}
+        setRecipes={setRecipes} />
+
+      <Recipes
+        recipes={recipes}
+        counter={counter}
+        setCounter={setCounter} />
     </div>
   )
 }

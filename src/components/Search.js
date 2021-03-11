@@ -14,6 +14,7 @@ function Search({ query, setQuery, search, setSearch }) {
     }
 
     return (
+        <div className="search-form">
         <form
             onSubmit={submitSearch}
             className="searh-form" >
@@ -27,6 +28,7 @@ function Search({ query, setQuery, search, setSearch }) {
                 Search
             </button>
         </form >
+        </div>
     )
 }
 export default Search;
