@@ -3,8 +3,8 @@ import './App.css';
 import Header from './components/Header';
 import Recipes from './components/Recipes';
 import Search from './components/Search';
-import SearchByMeal from './components/SearchByMeal';
-import SearchByType from './components/SearchByType';
+import SortRecipes from './components/SortRecipes';
+import Footer from './components/Footer';
 
 const API_KEY = 'c208332812570382c9f55c23e57813ca';
 const YOUR_APP_ID = '7f7821ed';
@@ -14,13 +14,11 @@ const App = () => {
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
   const [query, setQuery] = useState('pizza');
-  const [mealQuery, setMealQuery] = useState('');
-  const [typeQuery, setTypeQuery] = useState('');
   const [counter, setCounter] = useState(10);
+  const [sortCriteria, setSortCriteria] = useState('');
 
   useEffect(() => { getData() }, [query, counter]);
-  useEffect(() => { filterRecipesMealType() }, [mealQuery]);
-  useEffect(() => { filterRecipesType() }, [typeQuery]);
+  useEffect(() => { sortRecipes() }, [sortCriteria, counter]);
 
 
   const getData = async () => {
@@ -29,26 +27,25 @@ const App = () => {
       let data = await response.json();
       console.log(data);
       setRecipes(data.hits)
-      console.log (data.hits)
+      console.log(data.hits)
     } catch (err) {
       console.log(err)
     }
   }
 
-  const filterRecipesMealType = () => {
-    setRecipes(recipes.filter((rec) => {
-      (rec.recipe.mealType && rec.recipe.mealType.includes(mealQuery.toLocaleLowerCase()))
-    }));
-  }
 
-  const filterRecipesType = () => {
-    setRecipes(recipes.filter((rec) => {
-      (rec.recipe.dishType && rec.recipe.dishType.includes(typeQuery.toLocaleLowerCase()))
-    }));
+  const sortRecipes = () => {
+    if (sortCriteria === "Z-A") {
+      return setRecipes(recipes.sort((a, b) => a.recipe.label.localeCompare(b.recipe.label)));
+    } else if (sortCriteria === "A-Z") {
+      return setRecipes(recipes.sort((a, b) => b.recipe.label.localeCompare(a.recipe.label)));
+    } else {
+      return;
+    }
   }
 
   return (
-    <div className="App">
+    <div className="app">
       <Header />
       <Search
         search={search}
@@ -57,22 +54,17 @@ const App = () => {
         setQuery={setQuery}
       />
 
-      <SearchByMeal
-        mealQuery={mealQuery}
-        setMealQuery={setMealQuery}
-        recipes={recipes}
-        setRecipes={setRecipes} />
 
-      <SearchByType
-        typeQuery={typeQuery}
-        setTypeQuery={setTypeQuery}
-        recipes={recipes}
-        setRecipes={setRecipes} />
+      <SortRecipes
+        setSortCriteria={setSortCriteria}
+      />
 
       <Recipes
         recipes={recipes}
         counter={counter}
         setCounter={setCounter} />
+
+      <Footer />
     </div>
   )
 }
