@@ -17,9 +17,9 @@ function ShowRecipe({ recipe, setShowRecipe }) {
           <p className="show-recipe-wigth"> <div className="lbl"> Total weight: </div>{(recipe.totalWeight).toFixed(2)}</p>
         </div>
         <div className="show-right">
-          <ol className="show-recipe-ingredients">
+          <ol className="show-recipe-ingredients-ol">
             {recipe.ingredientLines.map((ingredient) =>
-              <li key={ingredient}>{ingredient}</li>
+              <li className="show-recipe-ingredients" key={ingredient}>{ingredient} </li>
             )}
           </ol>
           <button className="back-to-rec" onClick={setDisplayToNone}>Cancel</button>
