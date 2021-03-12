@@ -70,7 +70,8 @@ box-shadow: 0px 0px 10px 2px  rgb(145, 160, 112);
 }
 
 div .sort-recipes{
-  background: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 50%);
+  background-image: 
+  radial-gradient( circle 759px at -6.7% 50%,  rgba(80,131,73,1) 0%, rgba(140,209,131,1) 26.2%, rgba(178,231,170,1) 50.6%, rgba(144,213,135,1) 74.1%, rgba(75,118,69,1) 100.3% );
   opacity: 0.7;
  
 }
@@ -140,10 +141,14 @@ color: brown;
   background-size: cover;
   height: 600px;
   width: 800px;
-  position: absolute;
-  top:20%;
-  left: 20%;
-  right: 20%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -100px;
+
+ 
+
   box-shadow: 0px 0px 30px 6px  rgb(9, 124, 57);
   border:solid 3px rgb(231, 190, 56);
   border-radius: 2rem;
