@@ -158,6 +158,33 @@ padding: 10px;
   justify-content: center;
 }
 
+.show-left{
+  text-align: center;
+  font-size: 10px;
+  width: 40%;
+}
+.show-right{
+  text-align: center;
+  align-content: center;
+  align-items: center;
+  width: 60%;
+
+}
+
+.show-recipe-ingredients{
+  text-align: center;
+  font-size: 10px;
+}
+
+.show-recipe-image{
+  max-width: 60%;
+  max-height: 60%;
+  border-radius: 2rem;
+
+}
+.lbl{
+  font-weight: 700;
+}
 .footer{
 text-align: left;
 }

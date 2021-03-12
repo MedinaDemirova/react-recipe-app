@@ -13,7 +13,8 @@ function ShowRecipe({ recipe, setShowRecipe }) {
 
           <img className="show-recipe-image" src={recipe.image} alt="" />
 
-          <p className="show-recipe-calories">Calories: {(recipe.calories).toFixed(2)}</p>
+          <p className="show-recipe-calories"> <div className="lbl"> Calories: </div>{(recipe.calories).toFixed(2)}</p>
+          <p className="show-recipe-wigth"> <div className="lbl"> Total weight: </div>{(recipe.totalWeight).toFixed(2)}</p>
         </div>
         <div className="show-right">
           <ol className="show-recipe-ingredients">
