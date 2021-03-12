@@ -22,7 +22,7 @@ function ShowRecipe({ recipe, setShowRecipe }) {
               <li key={ingredient}>{ingredient}</li>
             )}
           </ol>
-          <button onClick={setDisplayToNone}>Back to recipes</button>
+          <button className="back-to-rec" onClick={setDisplayToNone}>Cancel</button>
         </div>
       </div>
     </div>

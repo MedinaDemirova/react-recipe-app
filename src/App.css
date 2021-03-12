@@ -69,18 +69,35 @@ font-weight: bold;
 box-shadow: 0px 0px 10px 2px  rgb(145, 160, 112);
 }
 
-div .sort-recipes{
-  background-image: 
-  radial-gradient( circle 759px at -6.7% 50%,  rgba(80,131,73,1) 0%, rgba(140,209,131,1) 26.2%, rgba(178,231,170,1) 50.6%, rgba(144,213,135,1) 74.1%, rgba(75,118,69,1) 100.3% );
-  opacity: 0.7;
  
+.sort-recipes{
+text-align: right;
+padding-right: 2%;
+background-image: 
+  radial-gradient( circle 759px at -6.7% 50%,  rgba(80,131,73,1) 0%, rgba(140,209,131,1) 26.2%, rgba(178,231,170,1) 50.6%, rgba(144,213,135,1) 74.1%, rgba(75,118,69,1) 100.3% );
+opacity: 0.7;
+border: solid 1.5px darkgreen;
+box-shadow: 0px 0px 10px 2px rgb(145, 160, 112);
+margin: 2%;
 }
+
+.select-sort{
+  border-radius: 0.5rem;
+  margin: 2px;
+  width: 15;
+  font-size: 25px;
+}
+
 
 .recipes-list{
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   padding:1vh;
+  overflow: auto; 
+  text-align:justify; 
+  height: 60vh;
+  
 }
 
 .recipe{
@@ -96,6 +113,7 @@ align-items: center;
 justify-items: center;
 box-shadow: 0px 0px 10px 2px  rgb(145, 160, 112);
 
+
 }
 
 .recipe-label{
@@ -109,6 +127,7 @@ box-shadow: 0px 0px 10px 2px  rgb(145, 160, 112);
   max-width: 50%;
   max-height: 50%;
   box-shadow: 0px 0px 10px 2px  rgb(145, 160, 112);
+  border-radius: 2rem;
 }
 
 .recipe-calories{
@@ -139,16 +158,11 @@ color: brown;
   text-align: center;
   background: url("https://images.pexels.com/photos/616401/pexels-photo-616401.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
   background-size: cover;
-  height: 600px;
-  width: 800px;
+  height: 500px;
+  width: 700px;
   position: fixed;
-  top: 50%;
-  left: 50%;
-  margin-top: -50px;
-  margin-left: -100px;
-
- 
-
+  top:10vh;
+  left:50vh;
   box-shadow: 0px 0px 30px 6px  rgb(9, 124, 57);
   border:solid 3px rgb(231, 190, 56);
   border-radius: 2rem;
@@ -157,6 +171,7 @@ padding: 10px;
 
 .show-recipe-header{
   font-size: 50px;
+  max-height: 15%;
 }
 .show-main{
   display: flex;
@@ -173,7 +188,6 @@ padding: 10px;
   align-content: center;
   align-items: center;
   width: 60%;
-
 }
 
 .show-recipe-ingredients{
@@ -185,10 +199,25 @@ padding: 10px;
   max-width: 60%;
   max-height: 60%;
   border-radius: 2rem;
-
+  box-shadow: 0px 0px 10px 2px  rgb(145, 160, 112);
 }
+
 .lbl{
   font-weight: 700;
+}
+
+.back-to-rec{
+  position: absolute;
+  bottom: 10px;
+  left:12%;
+  margin: 20px;
+  background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 50%);
+  border-radius:2vh;
+  border: solid 2px black;
+  font-size: 25px;
+  padding: 5px;
+  font-weight: bold;
+  
 }
 .footer{
 text-align: left;

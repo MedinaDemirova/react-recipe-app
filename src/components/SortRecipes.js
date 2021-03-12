@@ -10,8 +10,8 @@ function SortRecipes({ setSortCriteria }) {
     return (
         <div className="sort-recipes">
 
-            <label htmlFor="sort-recipes">Sort:</label>
-            <select
+            <label  htmlFor="sort-recipes">  Sort:</label>
+            <select className="select-sort"
                 onChange={sortRecipes}
                 name="sort-recipes"
                 id="sort-recipes">
