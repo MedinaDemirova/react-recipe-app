@@ -36,9 +36,7 @@ font-weight: 650
 .header-p{
   font-size: 4vh;
   font-weight: 600;
-  padding-left: 25vh;
-  padding-right: 25vh;
-  margin-bottom:5%;
+  margin-bottom:2%;
 }
 
 /* Search */
