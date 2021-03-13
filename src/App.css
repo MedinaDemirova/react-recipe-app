@@ -23,21 +23,22 @@
 .header{
   min-height: 25vh;
   text-align: center;
-  padding-top: 8vh;
- 
+  padding-top: 5vh;
+ margin-bottom: 5%;
 }
 
 .header-main{
-font-size: 50px;
+font-size: 9vh;
 margin: 10px;
 font-weight: 650
 }
 
 .header-p{
-  font-size: 30px;
+  font-size: 4vh;
   font-weight: 600;
   padding-left: 25vh;
   padding-right: 25vh;
+  margin-bottom:5%;
 }
 
 /* Search */
@@ -45,10 +46,7 @@ div .search-form{
   min-height: 10vh;
   display: flex;
   justify-content: center;
-  align-items: center;
-
-
- 
+  align-items: center; 
 }
 
 form .search-form{
@@ -79,20 +77,23 @@ box-shadow: 0px 0px 10px 2px  rgb(145, 160, 112);
  /* Sort */
 .sort-recipes{
 text-align: right;
-padding-right: 2%;
+padding: 1.5px;
 background-image: 
   radial-gradient( circle 759px at -6.7% 50%,  rgba(80,131,73,1) 0%, rgba(140,209,131,1) 26.2%, rgba(178,231,170,1) 50.6%, rgba(144,213,135,1) 74.1%, rgba(75,118,69,1) 100.3% );
 opacity: 0.7;
 border: solid 1.5px darkgreen;
 box-shadow: 0px 0px 10px 2px rgb(145, 160, 112);
-
+max-height: 8vh;
+align-items: center;
 }
 
 .select-sort{
+  font-size: 80%;
+  text-align: left;
+  max-height: 7vh;
   border-radius: 0.5rem;
   margin: 2px;
-  width: 15;
-  font-size: 25px;
+  max-width: 15vw;
 }
 
 /* Recipes list */
@@ -166,8 +167,12 @@ color: brown;
 .cook-it{
   background-image: linear-gradient(62deg, #FBAB7E 0%, rgb(250, 213, 120) 50%);
   border-radius:2vh;
+  box-shadow: 0px 0px 10px 2px  rgb(145, 160, 112);
   border: solid 1px black;
-  font-size: 25px;
+  min-width: 9vw;
+  height: 5.2vh;
+  align-content: center;
+  font-size: 3.5vh;
   padding: 2px;
 }
 
@@ -175,9 +180,12 @@ color: brown;
   margin: 20px;
   background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 50%);
   border-radius:2vh;
-  border: solid 2px black;
+  border: solid 1px black;
+  min-width: 9vw;
+  height: 5.2vh;
   font-size: 25px;
-  padding: 5px;
+  padding: 3px;
+  align-content: center;
 }
 
 /* Show recipe */
@@ -272,6 +280,7 @@ justify-content: center
 /* Footer */
 .footer{
   display: flex;  
+  justify-content: center;
   height: auto;
   background-image: url("https://images.pexels.com/photos/616404/pexels-photo-616404.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
   background-size: cover;
@@ -284,18 +293,17 @@ justify-content: center
 
 .info{
   text-align: center;
-  position: flex;
-  justify-content: center;
 }
 
 .info h4{
 text-decoration: underline;
- font-size: 20px;
- font-weight: bold;
+ font-size: 4vh;
 
 }
 
 .info div , a {
-  font-size: 20px;
+  font-size: 3vh;
+  font-weight: 600;
+  text-shadow: 5px 5px 50px 8px  rgb(227, 230, 223);
  
 }
