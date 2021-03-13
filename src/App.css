@@ -13,6 +13,7 @@
 background-size: 100%, 100%;
 }
 
+/* Header */
 
 .header{
   min-height: 25vh;
@@ -33,7 +34,7 @@ font-weight: 650
   padding-right: 25vh;
 }
 
-
+/* Search */
 div .search-form{
   min-height: 10vh;
   display: flex;
@@ -69,7 +70,7 @@ font-weight: bold;
 box-shadow: 0px 0px 10px 2px  rgb(145, 160, 112);
 }
 
- 
+ /* Sort */
 .sort-recipes{
 text-align: right;
 padding-right: 2%;
@@ -88,7 +89,7 @@ box-shadow: 0px 0px 10px 2px rgb(145, 160, 112);
   font-size: 25px;
 }
 
-
+/* Recipes list */
 .recipes-list{
   display: flex;
   justify-content: space-around;
@@ -100,6 +101,26 @@ box-shadow: 0px 0px 10px 2px rgb(145, 160, 112);
   
 }
 
+/* Scrollers */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgb(161, 151, 117);
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background:  linear-gradient(62deg, #FBAB7E 0%, #F7CE68 50%);
+  border-radius: 10px;
+  border:solid 1px darkgreen;
+}
+
+/* Recipe */
 .recipe{
 width: 30vh;
 height: 40vh;
@@ -111,7 +132,7 @@ align-content: center;
 text-align: center;
 align-items: center;
 justify-items: center;
-box-shadow: 0px 0px 10px 2px  rgb(145, 160, 112);
+box-shadow: 0px 0px 10px 2px  rgb(118, 133, 87);
 
 
 }
@@ -137,7 +158,7 @@ color: brown;
 }
 
 .cook-it{
-  background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 50%);
+  background-image: linear-gradient(62deg, #FBAB7E 0%, rgb(250, 213, 120) 50%);
   border-radius:2vh;
   border: solid 1px black;
   font-size: 25px;
@@ -153,7 +174,7 @@ color: brown;
   padding: 5px;
 }
 
-
+/* Show recipe */
 .show-recipe{
   text-align: center;
   background: url("https://images.pexels.com/photos/616401/pexels-photo-616401.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
@@ -227,6 +248,8 @@ height: 400px;
   font-weight: bold;
   
 }
+
+/* Footer */
 .footer{
 text-align: left;
 }
