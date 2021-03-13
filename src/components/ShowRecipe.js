@@ -13,11 +13,10 @@ function ShowRecipe({ recipe, setShowRecipe }) {
       </h1>
       <div className="show-main">
         <div className="show-left">
-
           <img className="show-recipe-image" src={recipe.image} alt="" />
-
-          <p className="show-recipe-calories"> <div className="lbl"> Calories: </div>{(recipe.calories).toFixed(2)}</p>
-          <p className="show-recipe-wigth"> <div className="lbl"> Total weight: </div>{(recipe.totalWeight).toFixed(2)}</p>
+          <p className="show-recipe-calories">  Calories: {(recipe.calories).toFixed(2)}</p>
+          <p className="show-recipe-wigth">  Total weight: {(recipe.totalWeight).toFixed(2)}</p>
+        
         </div>
         <div className="show-right">
           <ol className="show-recipe-ingredients-ol">
@@ -25,9 +24,11 @@ function ShowRecipe({ recipe, setShowRecipe }) {
               <li className="show-recipe-ingredients" key={ingredient}>{ingredient} </li>
             )}
           </ol>
-          <button className="back-to-rec" onClick={setDisplayToNone}>Cancel</button>
+         
         </div>
+        
       </div>
+      <button className="back-to-rec" onClick={setDisplayToNone}>Cancel</button>
     </div>
   )
 }
