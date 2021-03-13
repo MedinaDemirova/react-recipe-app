@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Search({ query, setQuery, search, setSearch }) {
+function Search({ setQuery, search, setSearch }) {
 
     function setSearcher(e) {
         e.preventDefault();

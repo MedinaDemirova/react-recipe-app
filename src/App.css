@@ -9,16 +9,22 @@
 
 .app{
   max-height: fit-content;
-  background-image: url("https://images.pexels.com/photos/349610/pexels-photo-349610.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
-background-size: 100%, 100%;
+  
 }
 
 /* Header */
+.head{
+  background-image: url("https://images.pexels.com/photos/349610/pexels-photo-349610.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  background-size: cover;
+  padding-bottom: 5%;
+  box-shadow: inset 0px 0px 20px 5px  rgb(52, 53, 50);
+}
 
 .header{
   min-height: 25vh;
   text-align: center;
   padding-top: 8vh;
+ 
 }
 
 .header-main{
@@ -40,7 +46,7 @@ div .search-form{
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 5%;
+
 
  
 }
@@ -267,24 +273,19 @@ justify-content: center
 .footer{
   display: flex;  
   height: auto;
-  background-image: 
-  radial-gradient( circle 759px at -6.7% 50%,  rgba(80,131,73,1) 0%, rgba(140,209,131,1) 26.2%, rgba(178,231,170,1) 50.6%, rgba(144,213,135,1) 74.1%, rgba(75,118,69,1) 100.3% );
+  background-image: url("https://images.pexels.com/photos/616404/pexels-photo-616404.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
+  background-size: cover;
+  box-shadow: inset 0px 0px 20px 5px  rgb(52, 53, 50);
   opacity: 0.9;
   padding: 10px;
 }
 
-.footer-p{
-  font-size: 20px;
-  position: fixed;
-  bottom: 1%;
-  right: 2%;
-}
+
 
 .info{
   text-align: center;
-  position: relative;
-  left: 40%;
-  top:10%;
+  position: flex;
+  justify-content: center;
 }
 
 .info h4{

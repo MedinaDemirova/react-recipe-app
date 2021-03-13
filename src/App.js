@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import Header from './components/Header';
 import Recipes from './components/Recipes';
-import Search from './components/Search';
+//import Search from './components/Search';
 import SortRecipes from './components/SortRecipes';
 import Footer from './components/Footer';
 
@@ -46,15 +46,10 @@ const App = () => {
 
   return (
     <div className="app">
-      <Header />
-      <Search
-        search={search}
+      <Header search={search}
         setSearch={setSearch}
         query={query}
-        setQuery={setQuery}
-      />
-
-
+        setQuery={setQuery} />
       <SortRecipes
         setSortCriteria={setSortCriteria}
       />
