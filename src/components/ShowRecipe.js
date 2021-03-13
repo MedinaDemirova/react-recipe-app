@@ -7,7 +7,9 @@ function ShowRecipe({ recipe, setShowRecipe }) {
   }
   return (
     <div className="show-recipe">
-      <h1 className="show-recipe-header">{recipe.label}</h1>
+      <h1 className="show-recipe-header">{recipe.label}
+        <img className="show-separator" src="https://www.pidl.org/site-assets/images/line.png/@@images/image.png" alt="" />
+      </h1>
       <div className="show-main">
         <div className="show-left">
 

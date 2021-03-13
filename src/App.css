@@ -97,7 +97,7 @@ box-shadow: 0px 0px 10px 2px rgb(145, 160, 112);
   padding:1vh;
   overflow: auto; 
   text-align:justify; 
-  height: 60vh;
+  height: 75vh;
   
 }
 
@@ -191,9 +191,23 @@ padding: 10px;
 }
 
 .show-recipe-header{
-  font-size: 50px;
-  max-height: 15%;
+  font-size: 30px;
+  font-weight: bolder;
+  height: 11%;
+  margin-bottom: 5%;
+  justify-content: center;
+  text-align: center;
 }
+.show-separator{
+  size: 100px 400px;
+  widows: 500px;;
+  height: 200px;
+  position: fixed;
+ top:6%;
+ left:35%;
+justify-content: center
+}
+
 .show-main{
   display: flex;
   justify-content: center;
@@ -214,7 +228,7 @@ padding: 10px;
 .show-recipe-ingredients-ol{
   overflow: auto; 
   text-align:justify; 
-height: 400px;
+  height: 400px;
 
 }
 .show-recipe-ingredients{
@@ -232,7 +246,7 @@ height: 400px;
 }
 
 .lbl{
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .back-to-rec{
@@ -251,5 +265,36 @@ height: 400px;
 
 /* Footer */
 .footer{
-text-align: left;
+  display: flex;  
+  height: auto;
+  background-image: 
+  radial-gradient( circle 759px at -6.7% 50%,  rgba(80,131,73,1) 0%, rgba(140,209,131,1) 26.2%, rgba(178,231,170,1) 50.6%, rgba(144,213,135,1) 74.1%, rgba(75,118,69,1) 100.3% );
+  opacity: 0.9;
+  padding: 10px;
+}
+
+.footer-p{
+  font-size: 20px;
+  position: fixed;
+  bottom: 1%;
+  right: 2%;
+}
+
+.info{
+  text-align: center;
+  position: relative;
+  left: 40%;
+  top:10%;
+}
+
+.info h4{
+text-decoration: underline;
+ font-size: 20px;
+ font-weight: bold;
+
+}
+
+.info div , a {
+  font-size: 20px;
+ 
 }
