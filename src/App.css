@@ -48,7 +48,7 @@ div .search-form{
 }
 
 form .search-form{
-  max-width: 60%;
+  max-width: 60vw;
   border: none
 }
 
@@ -59,10 +59,13 @@ form .search-form{
   border-bottom-right-radius: 2rem;
   box-shadow: 0px 0px 10px 2px rgb(145, 160, 112);
   padding: 1px;
+  max-width: 30%;
+  size: 10%;
+
 }
 
 .search-input{
-  padding: 1px;
+padding: 1px;
 background: transparent;
 border:solid  2px darkgreen;
 border-bottom-left-radius: 2rem;
@@ -70,6 +73,7 @@ border-top-left-radius: 2rem;
 text-align: center;
 font-weight: bold;
 box-shadow: 0px 0px 10px 2px  rgb(145, 160, 112);
+max-width: 50vw;
 }
 
  /* Sort */
