@@ -7,6 +7,7 @@ function ShowRecipe({ recipe, setShowRecipe }) {
   }
   return (
     <div className="show-recipe">
+    <img className="pin" src="http://www.pngall.com/wp-content/uploads/4/Red-Pin-Transparent.png" alt=""/>
       <h1 className="show-recipe-header">{recipe.label}
         <img className="show-separator" src="https://www.pidl.org/site-assets/images/line.png/@@images/image.png" alt="" />
       </h1>

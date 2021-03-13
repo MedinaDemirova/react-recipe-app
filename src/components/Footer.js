@@ -10,7 +10,7 @@ function Footer({ user }) {
                    <div>Medina Demirova </div> 
                    <div>E-mail: medinademirova@yahoo.com</div> 
                    <div> Sofia, BG </div> 
-                   <div><a href="https://github.com/MedinaDemirova/Teeth-Encyclopedia-"> GitHub Repository</a></div> 
+                   <div><a href="https://github.com/MedinaDemirova/react-recipe-app"> GitHub Repository</a></div> 
                    <div>©  All rights reserved! </div>
               
             </div>
