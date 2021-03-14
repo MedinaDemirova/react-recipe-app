@@ -200,7 +200,7 @@ color: brown;
   position:fixed;
   top:20%;
   right:10%;
-  box-shadow: 0px 0px 30px 10px  rgb(160, 224, 184);
+  box-shadow: inset 0px 0px 30px 10px  rgb(122, 126, 123);
   border:solid 1px rgb(228, 195, 52);
   border-radius: 2rem;
 padding: 10px;
@@ -209,11 +209,12 @@ padding: 10px;
 
 
 .show-recipe-header{
+  display: flex;
   font-size:100%;
   font-weight: bolder;
-  height: 11%;
+  max-height: 11%;
   text-decoration: underline;
-  margin-bottom: 5%;
+  margin-bottom: 3%;
   justify-content: center;
   text-align: center;
   color:rgb(71, 21, 21);
@@ -260,9 +261,9 @@ height: 100%;
 
 }
 .show-recipe-ingredients{
-  text-align: center;
+  text-align: left;
  font-weight: bold;
- font-size: 4vh;
+ font-size: 70%;
  color:rgb(71, 21, 21);
 }
 
