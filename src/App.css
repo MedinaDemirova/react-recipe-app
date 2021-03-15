@@ -201,7 +201,7 @@ color: brown;
   top:20%;
   right:10%;
   box-shadow: inset 0px 0px 30px 10px  rgb(122, 126, 123);
-  border:solid 1px rgb(228, 195, 52);
+  border:solid 1.5px rgb(32, 148, 28);
   border-radius: 2rem;
 padding: 10px;
 }
@@ -213,6 +213,7 @@ padding: 10px;
   font-size:100%;
   font-weight: bolder;
   max-height: 11%;
+  overflow: hidden;
   text-decoration: underline;
   margin-bottom: 3%;
   justify-content: center;
