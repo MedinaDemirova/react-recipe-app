@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 function SortRecipes({ setSortCriteria }) {
 
@@ -9,12 +10,12 @@ function SortRecipes({ setSortCriteria }) {
 
     return (
         <div className="sort-recipes">
-            <label  htmlFor="sort-recipes">  Sort:</label>
+       <Link to="/"> <div className="home-link">Home</div></Link>
             <select className="select-sort"
                 onChange={sortRecipes}
                 name="sort-recipes"
                 id="sort-recipes">
-                <option value="">Select option</option>
+                <option value="">Sort option</option>
                 <option value="A-Z">A-Z</option>
                 <option value="Z-A">Z-A</option>
             </select>

@@ -8,6 +8,8 @@ import Recipes from './components/Recipes/Recipes';
 import SortRecipes from './components/Recipes/SortRecipes';
 import Footer from './components/Footer';
 import Error from "./components/Error";
+import Register from "./components/Auth/Register/Register";
+import Login from "./components/Auth/Login/Login";
 
 //Servisec
 import { sortRecipes } from './services/sortRecipes';
@@ -39,6 +41,14 @@ const App = () => {
             recipes={recipes}
             counter={counter}
             setCounter={setCounter} />
+        </Route>
+
+        <Route path="/auth/register">
+        <Register />
+        </Route>
+
+        <Route path="/auth/login">
+        <Login />
         </Route>
 
         <Route render={() => <Error />} />

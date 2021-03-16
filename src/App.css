@@ -56,7 +56,12 @@ font-weight: 650
 .header-p{
   font-size: 4vh;
   font-weight: 600;
-  margin-bottom:2%;
+ 
+}
+
+.header-p-sec{
+  font-size: 3vh;
+  margin-bottom:1%;
 }
 
 /* Search */
@@ -109,6 +114,7 @@ max-height: 8vh;
 align-items: center;
 position: sticky;
 top: 0;
+display: flex;
 }
 
 .select-sort{
@@ -117,7 +123,13 @@ top: 0;
   max-height: 7vh;
   border-radius: 0.5rem;
   margin: 2px;
-  min-width: 15vw;
+  min-width: 15vw; 
+  position: fixed;
+  right: 1%;
+}
+
+.home-link{
+left: 1%;
 }
 
 /* Recipes list */

@@ -6,10 +6,11 @@ function Header({ user, setQuery, search, setSearch }) {
     return (
         <div className="head">
             <div className="header">
-                <Link to="/">
+              
                     <h1 className="header-main">Grab your dinner recipe! </h1>
                     <p className='header-p'> Are you homemade dishes lover? Of course you are! Discover your new culinary inspiration for today's meal! </p>
-                </Link>
+                    <p className= "header-p-sec">  <Link to="/auth/register">Register to crate list of your favourite recipes!   </Link></p>
+             
             </div>
             <div>
                 <Search
