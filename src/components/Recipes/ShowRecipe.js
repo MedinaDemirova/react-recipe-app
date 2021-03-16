@@ -1,5 +1,4 @@
 import React from 'react';
-
 function ShowRecipe({ recipe, setShowRecipe }) {
   function setDisplayToNone() {
     setShowRecipe(false);

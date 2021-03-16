@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from 'react';
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
-import Header from './components/Header';
-import Recipes from './components/Recipes';
-//import Search from './components/Search';
-import SortRecipes from './components/SortRecipes';
-import Footer from './components/Footer';
 
-const API_KEY = 'c208332812570382c9f55c23e57813ca';
-const YOUR_APP_ID = '7f7821ed';
+//Components
+import Header from './components/Header';
+import Recipes from './components/Recipes/Recipes';
+import SortRecipes from './components/Recipes/SortRecipes';
+import Footer from './components/Footer';
+import Error from "./components/Error";
+
+//Servisec
+import { sortRecipes } from './services/sortRecipes';
+import { getData } from "./services/getData";
 
 const App = () => {
 
@@ -17,32 +21,8 @@ const App = () => {
   const [counter, setCounter] = useState(10);
   const [sortCriteria, setSortCriteria] = useState('');
 
-  useEffect(() => { getData() }, [query, counter]);
-  useEffect(() => { sortRecipes() }, [sortCriteria, counter]);
-
-
-  const getData = async () => {
-    try {
-      const response = await fetch(`https://api.edamam.com/search?q=${query}&app_id=${YOUR_APP_ID}&app_key=${API_KEY}&from=0&to=${counter}`)
-      let data = await response.json();
-      console.log(data);
-      setRecipes(data.hits)
-      console.log(data.hits)
-    } catch (err) {
-      console.log(err)
-    }
-  }
-
-
-  const sortRecipes = () => {
-    if (sortCriteria === "Z-A") {
-      return setRecipes(recipes.sort((a, b) => a.recipe.label.localeCompare(b.recipe.label)));
-    } else if (sortCriteria === "A-Z") {
-      return setRecipes(recipes.sort((a, b) => b.recipe.label.localeCompare(a.recipe.label)));
-    } else {
-      return;
-    }
-  }
+  useEffect(() => { getData(setRecipes, query, counter) }, [query, counter]);
+  useEffect(() => { sortRecipes(sortCriteria, recipes, setRecipes) }, [sortCriteria, counter]);
 
   return (
     <div className="app">
@@ -53,12 +33,16 @@ const App = () => {
       <SortRecipes
         setSortCriteria={setSortCriteria}
       />
+      <Switch>
+        <Route path="/" exact >
+          <Recipes
+            recipes={recipes}
+            counter={counter}
+            setCounter={setCounter} />
+        </Route>
 
-      <Recipes
-        recipes={recipes}
-        counter={counter}
-        setCounter={setCounter} />
-
+        <Route render={() => <Error />} />
+      </Switch>
       <Footer />
     </div>
   )
