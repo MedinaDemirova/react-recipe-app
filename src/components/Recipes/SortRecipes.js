@@ -1,7 +1,9 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
-function SortRecipes({ setSortCriteria }) {
+import Dropdownmenu from "../Dropdownmenu";
+
+function SortRecipes({ setSortCriteria, setSearchCategory }) {
 
     function sortRecipes(e) {
         e.preventDefault();
@@ -10,7 +12,12 @@ function SortRecipes({ setSortCriteria }) {
 
     return (
         <div className="sort-recipes">
-       <Link to="/"> <div className="home-link">Home</div></Link>
+            <Link to="/"> <div className="home-link">Home</div></Link>
+           
+            <Dropdownmenu  
+            setSearchCategory= {setSearchCategory}
+            />
+               
             <select className="select-sort"
                 onChange={sortRecipes}
                 name="sort-recipes"

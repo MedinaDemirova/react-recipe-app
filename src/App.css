@@ -43,8 +43,8 @@ img.error{
 .header{
   min-height: 11vh;
   text-align: center;
-  padding-top: 5vh;
- margin-bottom: 5%;
+  padding-top: 4vh;
+ margin-bottom: 4%;
 }
 
 .header-main{
@@ -60,7 +60,7 @@ font-weight: 650
 }
 
 .header-p-sec{
-  font-size: 3vh;
+  font-size: 4vh;
   margin-bottom:1%;
 }
 
@@ -115,6 +115,7 @@ align-items: center;
 position: sticky;
 top: 0;
 display: flex;
+
 }
 
 .select-sort{
@@ -124,13 +125,60 @@ display: flex;
   border-radius: 0.5rem;
   margin: 2px;
   min-width: 15vw; 
-  position: fixed;
-  right: 1%;
+  position: absolute;
+right: 0;
+ 
 }
 
 .home-link{
-left: 1%;
+left: 3%;
+margin-right: 2vw;
+font-size: 3vh;
 }
+
+.register-link{
+  font-weight: bold;
+  color:rgb(9, 126, 62);
+}
+
+
+/* Dropdpwn menu */
+.dropbtn {
+background: transparent;
+  color: black;
+  padding: 1%;
+  font-size: 3vh;
+  font-weight: bold;
+  border: none;
+  
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #9fd6a8;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(3, 26, 7, 0.2);
+  z-index: 2;
+}
+
+.dropdown-content option {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content option:hover {background-color: rgb(243, 247, 244);}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
 
 /* Recipes list */
 .recipes-list{

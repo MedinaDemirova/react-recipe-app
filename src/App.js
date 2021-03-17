@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
 
@@ -11,20 +11,30 @@ import Error from "./components/Error";
 import Register from "./components/Auth/Register/Register";
 import Login from "./components/Auth/Login/Login";
 
-//Servisec
+//Services
 import { sortRecipes } from './services/sortRecipes';
-import { getData } from "./services/getData";
+import { getData, getDataByCategory } from "./services/getData";
 
 const App = () => {
 
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
-  const [query, setQuery] = useState('pizza');
+  const [query, setQuery] = useState('chicken');
   const [counter, setCounter] = useState(10);
   const [sortCriteria, setSortCriteria] = useState('');
+  const [searchCategory, setSearchCategory] = useState('');
 
-  useEffect(() => { getData(setRecipes, query, counter) }, [query, counter]);
+  useEffect(() => {  getData(setRecipes, query, counter) }, [counter, query]);
+  console.log ('get data')
+
   useEffect(() => { sortRecipes(sortCriteria, recipes, setRecipes) }, [sortCriteria, counter]);
+
+
+  useEffect(() => {
+    getDataByCategory(setRecipes, query, counter, searchCategory)
+  }, [searchCategory]);
+
+console.log ('secont')
 
   return (
     <div className="app">
@@ -34,21 +44,23 @@ const App = () => {
         setQuery={setQuery} />
       <SortRecipes
         setSortCriteria={setSortCriteria}
+        setSearchCategory={setSearchCategory}
+
       />
       <Switch>
         <Route path="/" exact >
           <Recipes
-            recipes={recipes}
+            recipes={recipes? recipes: []}
             counter={counter}
             setCounter={setCounter} />
         </Route>
 
         <Route path="/auth/register">
-        <Register />
+          <Register />
         </Route>
 
         <Route path="/auth/login">
-        <Login />
+          <Login />
         </Route>
 
         <Route render={() => <Error />} />
