@@ -25,19 +25,16 @@ const App = () => {
   const [counter, setCounter] = useState(14);
   const [sortCriteria, setSortCriteria] = useState('');
   const [searchCategory, setSearchCategory] = useState('');
-  const [drinks,setDrinks] = useState('');
-  const [drinksCounter,setDrinksCounter] = useState('5');
+  const [drinks, setDrinks] = useState([]);
+  const [drinksCounter, setDrinksCounter] = useState('5');
 
   useEffect(() => { getData(setRecipes, query, counter) }, [counter, query]);
-  console.log('get data')
 
-  useEffect(() => { sortRecipes(sortCriteria, recipes, setRecipes) }, [sortCriteria, counter]);
+  useEffect(() => { sortRecipes(sortCriteria, recipes, setRecipes) }, [sortCriteria]);
 
+  useEffect(() => {  getDataByCategory(setRecipes, query, counter, searchCategory) }, [searchCategory]);
 
-  useEffect(() => {
-    getDataByCategory(setRecipes, query, counter, searchCategory)
-  }, [searchCategory]);
-
+  useEffect(()=>{ getDrinksData(setDrinks, drinksCounter) },[])
   console.log('secont')
 
   return (
@@ -45,6 +42,7 @@ const App = () => {
       <Header search={search}
         setSearch={setSearch}
         query={query}
+        setCounter={setCounter}
         setQuery={setQuery} />
       <SortRecipes
         setSortCriteria={setSortCriteria}
@@ -56,6 +54,7 @@ const App = () => {
           <Recipes
             recipes={recipes ? recipes : []}
             counter={counter}
+            setSortCriteria = {setSortCriteria}
             setCounter={setCounter} />
         </Route>
 
@@ -72,15 +71,21 @@ const App = () => {
         <Route render={() => <Error />} />
       </Switch>
 
-      <DrinksHeader 
-      setDrinks = {setDrinks}
-      drinksCounter = {drinksCounter}
-      getDrinksData = {getDrinksData}
+      <DrinksHeader
+        setDrinks={setDrinks}
+        drinksCounter={drinksCounter}
+        getDrinksData={getDrinksData}
       />
 
       <Route path="/drinks" exact>
+        
         <Drinks
-        drinks ={drinks}
+          drinks={drinks ? drinks : []}
+          setDrinksCounter={setDrinksCounter}
+          getDrinksData = {getDrinksData}
+          setDrinks = {setDrinks}
+          drinksCounter = {drinksCounter}
+
         />
       </Route>
       <Footer />

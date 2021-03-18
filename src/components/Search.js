@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Search({ setQuery, search, setSearch }) {
+function Search({ setQuery, search, setSearch ,setCounter}) {
 
     function setSearcher(e) {
         e.preventDefault();
@@ -11,6 +11,7 @@ function Search({ setQuery, search, setSearch }) {
         e.preventDefault();
         setQuery(search);
         setSearch("");
+        setCounter(14);
     }
 
     return (

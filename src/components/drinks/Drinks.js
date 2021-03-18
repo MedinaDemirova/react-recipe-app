@@ -1,11 +1,14 @@
 import Drink from "./Drink";
 
-function Drinks({ drinks }) {
+ function Drinks({ drinks }) {
+      
+
+    
     return (
         <div className="drinks-list">
-            {
+            { 
                 drinks.map(drink => (
-                    <Drink drink={drink.recipe} key={drink.calories} />
+                    <Drink drink={drink.recipe} key={`${drink.calories}${drink.label}`} />
                 ))
             }
         </div>

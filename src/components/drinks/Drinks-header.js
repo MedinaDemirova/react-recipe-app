@@ -1,14 +1,9 @@
 import { Link } from 'react-router-dom';
 
-function DrinksHeader({setDrinks,drinksCounter,getDrinksData }) {
-
-    function getDrinksFunk(e) {
-        e.preventDefault();
-        getDrinksData(setDrinks,drinksCounter);
-    }
+function DrinksHeader() {
 
     return (
-        <Link to="/drinks" onClick={getDrinksFunk}><div className="drinks-header">
+        <Link to="/drinks"><div className="drinks-header">
 
             <div className="drinks-image">
                 <img className="drinks-image" src="drinks.png" alt="drinks-image" />
