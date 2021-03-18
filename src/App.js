@@ -10,10 +10,12 @@ import Footer from './components/Footer';
 import Error from "./components/Error";
 import Register from "./components/Auth/Register/Register";
 import Login from "./components/Auth/Login/Login";
+import DrinksHeader from "./components/drinks/Drinks-header";
+import Drinks from "./components/drinks/Drinks";
 
 //Services
 import { sortRecipes } from './services/sortRecipes';
-import { getData, getDataByCategory } from "./services/getData";
+import { getData, getDataByCategory, getDrinksData } from "./services/getData";
 
 const App = () => {
 
@@ -23,9 +25,11 @@ const App = () => {
   const [counter, setCounter] = useState(14);
   const [sortCriteria, setSortCriteria] = useState('');
   const [searchCategory, setSearchCategory] = useState('');
+  const [drinks,setDrinks] = useState('');
+  const [drinksCounter,setDrinksCounter] = useState('5');
 
-  useEffect(() => {  getData(setRecipes, query, counter) }, [counter, query]);
-  console.log ('get data')
+  useEffect(() => { getData(setRecipes, query, counter) }, [counter, query]);
+  console.log('get data')
 
   useEffect(() => { sortRecipes(sortCriteria, recipes, setRecipes) }, [sortCriteria, counter]);
 
@@ -34,7 +38,7 @@ const App = () => {
     getDataByCategory(setRecipes, query, counter, searchCategory)
   }, [searchCategory]);
 
-console.log ('secont')
+  console.log('secont')
 
   return (
     <div className="app">
@@ -48,12 +52,14 @@ console.log ('secont')
 
       />
       <Switch>
-        <Route path="/" exact >
+        <Route path="/"  >
           <Recipes
-            recipes={recipes? recipes: []}
+            recipes={recipes ? recipes : []}
             counter={counter}
             setCounter={setCounter} />
         </Route>
+
+
 
         <Route path="/auth/register">
           <Register />
@@ -65,6 +71,18 @@ console.log ('secont')
 
         <Route render={() => <Error />} />
       </Switch>
+
+      <DrinksHeader 
+      setDrinks = {setDrinks}
+      drinksCounter = {drinksCounter}
+      getDrinksData = {getDrinksData}
+      />
+
+      <Route path="/drinks" exact>
+        <Drinks
+        drinks ={drinks}
+        />
+      </Route>
       <Footer />
     </div>
   )

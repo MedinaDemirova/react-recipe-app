@@ -18,8 +18,6 @@ function Recipe({ recipe }) {
 
             <img className="recipe-image" src={recipe.image} alt="" />
 
-            <p className="recipe-calories">Calories: {(recipe.calories).toFixed(2)}</p>
-
            
             <button onClick={showRecipeFunc} className="cook-it">Cook it!</button>
            
