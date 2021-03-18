@@ -20,7 +20,7 @@ const App = () => {
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
   const [query, setQuery] = useState('chicken');
-  const [counter, setCounter] = useState(10);
+  const [counter, setCounter] = useState(14);
   const [sortCriteria, setSortCriteria] = useState('');
   const [searchCategory, setSearchCategory] = useState('');
 

@@ -5,7 +5,7 @@ import Recipe from './Recipe'
 function Recipes({ recipes, counter, setCounter }) {
 
     function loadMoreRecipes(e) {
-        setCounter(Number(counter +  10));
+        setCounter(Number(counter +  14));
         console.log (counter)
     }
 

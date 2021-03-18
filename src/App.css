@@ -48,19 +48,20 @@ img.error{
 }
 
 .header-main{
-font-size: 8vh;
+font-size: 6vh;
 margin: 10px;
 font-weight: 650
 }
 
 .header-p{
-  font-size: 4vh;
+  font-size: 3vh;
   font-weight: 600;
  
 }
 
 .header-p-sec{
-  font-size: 4vh;
+  font-size: 3vh;
+  font-weight: 600;
   margin-bottom:1%;
 }
 
@@ -139,6 +140,8 @@ font-size: 3vh;
 .register-link{
   font-weight: bold;
   color:rgb(9, 126, 62);
+  font-size: 3vh;
+  text-decoration: underline;
 }
 
 
@@ -162,7 +165,7 @@ background: transparent;
   display: none;
   position: absolute;
   background-color: #9fd6a8;
-  min-width: 160px;
+  min-width: 8vw;
   box-shadow: 0px 8px 16px 0px rgba(3, 26, 7, 0.2);
   z-index: 2;
 }
@@ -172,6 +175,8 @@ background: transparent;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
+  font-size: 3vh;
+  
 }
 
 .dropdown-content option:hover {background-color: rgb(243, 247, 244);}
@@ -188,7 +193,7 @@ background: transparent;
   padding:1vh;
   overflow: auto; 
   text-align:justify; 
-  height: 75vh;
+  height: 100vh;
   
 }
 
@@ -213,8 +218,8 @@ background: transparent;
 
 /* Recipe */
 .recipe{
-width: 30vh;
-height: 40vh;
+width: 20vh;
+height: 30vh;
 margin: 1vh;
 padding: 3vh;
 border: solid 2px darkgreen;
@@ -250,13 +255,13 @@ color: brown;
 
 .cook-it{
   background-image: linear-gradient(62deg, #FBAB7E 0%, rgb(250, 213, 120) 50%);
-  border-radius:2vh;
+  border-radius:1vh;
   box-shadow: 0px 0px 10px 2px  rgb(145, 160, 112);
   border: solid 1px black;
-  min-width: 9vw;
-  height: 5.2vh;
+  max-width: 50vw;
+  height: 4vh;
   align-content: center;
-  font-size: 3.5vh;
+  font-size: 3vh;
   padding: 2px;
 }
 
@@ -266,8 +271,8 @@ color: brown;
   border-radius:2vh;
   border: solid 1px black;
   min-width: 9vw;
-  height: 5.2vh;
-  font-size: 25px;
+  max-height: 6vh;
+  font-size: 20px;
   padding: 3px;
   align-content: center;
 }
