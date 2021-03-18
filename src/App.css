@@ -106,6 +106,8 @@ max-width: 50vw;
 .sort-recipes{
 text-align: right;
 padding: 1.5px;
+padding-left: 2vw;
+padding-right: 2vw;
 background-image: 
   radial-gradient( circle 759px at -6.7% 50%,  rgba(80,131,73,1) 0%, rgba(140,209,131,1) 26.2%, rgba(178,231,170,1) 50.6%, rgba(144,213,135,1) 74.1%, rgb(81, 155, 92) 100.3% );
 opacity: 0.9;
@@ -192,6 +194,8 @@ background: transparent;
   justify-content: space-around;
   flex-wrap: wrap;
   padding:1vh;
+  padding-left: 5vw;
+  padding-right: 5vw;
   overflow: auto; 
   text-align:justify; 
   height: 100vh;
@@ -200,18 +204,15 @@ background: transparent;
 }
 
 /* Scrollers */
-/* width */
 ::-webkit-scrollbar {
   width: 10px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
   box-shadow: inset 0 0 5px rgb(161, 151, 117);
   border-radius: 10px;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background:  linear-gradient(62deg, #FBAB7E 0%, #F7CE68 50%);
   border-radius: 10px;
@@ -376,6 +377,7 @@ padding-left: 3%;
   
 }
 
+/* Drinks */
 
 .drinks-header{
  text-align: center;
@@ -390,11 +392,45 @@ padding-left: 3%;
   text-align: left;
   width: 70%;
   margin-left: 5%;
+  margin-right: 20vw;
 }
 
 img.drinks-image{
   max-height:20vh;
+  margin-left: 10vw;
+}
 
+/* Drinks list */
+
+.drinks-list{
+  padding-top: 3vh;
+  width: auto;
+  overflow-x: auto;
+  height: 34vh;
+  display: flex;
+  background: rgb(236, 239, 240);
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+
+
+.drink-card{
+  min-width: 20vh;
+  margin: 1%;
+  display: inline;
+  font-size: 2.5vh;
+
+}
+
+.drink-card img{
+  width:auto;
+  height: 20vh; 
+}
+
+.drink-card-label{
+font-size: 2vh;
+position: relative;
+font-family: 'Times New Roman', Times, serif;
 }
 
 /* Footer */

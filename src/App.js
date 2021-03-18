@@ -22,11 +22,11 @@ const App = () => {
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
   const [query, setQuery] = useState('chicken');
-  const [counter, setCounter] = useState(14);
+  const [counter, setCounter] = useState(12);
   const [sortCriteria, setSortCriteria] = useState('');
   const [searchCategory, setSearchCategory] = useState('');
   const [drinks, setDrinks] = useState([]);
-  const [drinksCounter, setDrinksCounter] = useState('5');
+  const [drinksCounter, setDrinksCounter] = useState('12');
 
   useEffect(() => { getData(setRecipes, query, counter) }, [counter, query]);
 
