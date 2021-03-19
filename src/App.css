@@ -386,6 +386,13 @@ padding-left: 3%;
  display: flex;
  border-bottom: solid 2px green;
 }
+.get-drinks-btn{
+  max-height: 4vh;
+  margin: 1vh;
+  font-size: 100%;
+  font-weight: 500;
+
+}
  
 .drinks-header-paragraph{
   font-size: 2.5vh;
@@ -393,6 +400,7 @@ padding-left: 3%;
   width: 70%;
   margin-left: 5%;
   margin-right: 20vw;
+  overflow: hidden;
 }
 
 img.drinks-image{
@@ -437,8 +445,7 @@ font-family: 'Times New Roman', Times, serif;
 
 .show-drink{
   padding-top: 3vh;
-  width: auto;
-  height: 34vh;
+  min-height: 34vh;
   display: flex;
   padding-left: 1vw;
   background: whitesmoke;
@@ -482,9 +489,9 @@ font-family: 'Times New Roman', Times, serif;
   display: flex;  
   justify-content: center;
   height: auto;
-  background-image:url("https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
+  background-image:url("https://images.pexels.com/photos/628241/pexels-photo-628241.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
   background-size: cover;
-  box-shadow: inset 0px 0px 20px 5px  rgb(52, 53, 50);
+  box-shadow: inset 0px 0px 20px 3px  rgb(32, 32, 31);
   opacity: 0.9;
   padding: 10px;
   max-height: 10%;

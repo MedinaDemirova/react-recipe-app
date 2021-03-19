@@ -91,11 +91,11 @@ const App = () => {
       </Route>
 
       <Route path="/drinks/:label">
-
+       
         <ShowDrink 
-        drinkToShow = {drinkToShow}
+        drinkToShow = {drinkToShow }
         />
-
+      
       </Route>
 
       <Footer />

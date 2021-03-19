@@ -12,6 +12,7 @@ function DrinksHeader() {
             <div className="drinks-header-paragraph">
                 <p>Need a drink?</p>
                 Get cosy and create a warming feast preparing a special drink for you and your loved ones.
+                <button className= "get-drinks-btn">Get drinks</button>
                  </div>
         </div></Link>
     )
