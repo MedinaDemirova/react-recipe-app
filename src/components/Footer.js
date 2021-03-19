@@ -5,8 +5,6 @@ function Footer({ user }) {
         <div className="footer">
             <p className='footer-p'> </p>
             <div className="info">
-                <h4> Contacts</h4>
-              
                    <div>Medina Demirova </div> 
                    <div>E-mail: medinademirova@yahoo.com</div> 
                    <div> Sofia, BG </div> 

@@ -482,7 +482,7 @@ font-family: 'Times New Roman', Times, serif;
   display: flex;  
   justify-content: center;
   height: auto;
-  background-image: url("https://images.pexels.com/photos/616404/pexels-photo-616404.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
+  background-image:url("https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
   background-size: cover;
   box-shadow: inset 0px 0px 20px 5px  rgb(52, 53, 50);
   opacity: 0.9;
@@ -493,7 +493,7 @@ font-family: 'Times New Roman', Times, serif;
 
 
 .info{
-  color: white;
+  color: black;
   text-align: center;
 }
 

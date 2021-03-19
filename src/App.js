@@ -28,7 +28,7 @@ const App = () => {
   const [searchCategory, setSearchCategory] = useState('');
   const [drinks, setDrinks] = useState([]);
   const [drinksCounter, setDrinksCounter] = useState('12');
-  const [drinkToShow, setDrinkToShow] = useState({});
+  const [drinkToShow, setDrinkToShow] = useState({});  /*Need to set as default last  drinksToShow state*/
 
   useEffect(() => { getData(setRecipes, query, counter) }, [counter, query]);
 
