@@ -12,6 +12,7 @@ import Register from "./components/Auth/Register/Register";
 import Login from "./components/Auth/Login/Login";
 import DrinksHeader from "./components/drinks/Drinks-header";
 import Drinks from "./components/drinks/Drinks";
+import ShowDrink from "./components/drinks/ShowDrink"
 
 //Services
 import { sortRecipes } from './services/sortRecipes';
@@ -27,15 +28,15 @@ const App = () => {
   const [searchCategory, setSearchCategory] = useState('');
   const [drinks, setDrinks] = useState([]);
   const [drinksCounter, setDrinksCounter] = useState('12');
+  const [drinkToShow, setDrinkToShow] = useState({});
 
   useEffect(() => { getData(setRecipes, query, counter) }, [counter, query]);
 
   useEffect(() => { sortRecipes(sortCriteria, recipes, setRecipes) }, [sortCriteria]);
 
-  useEffect(() => {  getDataByCategory(setRecipes, query, counter, searchCategory) }, [searchCategory]);
+  useEffect(() => { getDataByCategory(setRecipes, query, counter, searchCategory) }, [searchCategory]);
 
-  useEffect(()=>{ getDrinksData(setDrinks, drinksCounter) },[])
-  console.log('secont')
+  useEffect(() => { getDrinksData(setDrinks, drinksCounter) }, [drinksCounter])
 
   return (
     <div className="app">
@@ -54,7 +55,7 @@ const App = () => {
           <Recipes
             recipes={recipes ? recipes : []}
             counter={counter}
-            setSortCriteria = {setSortCriteria}
+            setSortCriteria={setSortCriteria}
             setCounter={setCounter} />
         </Route>
 
@@ -77,17 +78,26 @@ const App = () => {
         getDrinksData={getDrinksData}
       />
 
-      <Route path="/drinks" exact>
-        
+      <Route path="/drinks" >
+
         <Drinks
           drinks={drinks ? drinks : []}
           setDrinksCounter={setDrinksCounter}
-          getDrinksData = {getDrinksData}
-          setDrinks = {setDrinks}
-          drinksCounter = {drinksCounter}
-
+          getDrinksData={getDrinksData}
+          setDrinks={setDrinks}
+          drinksCounter={drinksCounter}
+          setDrinkToShow={setDrinkToShow}
         />
       </Route>
+
+      <Route path="/drinks/:label">
+
+        <ShowDrink 
+        drinkToShow = {drinkToShow}
+        />
+
+      </Route>
+
       <Footer />
     </div>
   )

@@ -1,5 +1,6 @@
 import React from 'react';
 function ShowRecipe({ recipe, setShowRecipe }) {
+
   function setDisplayToNone() {
     setShowRecipe(false);
 
@@ -21,11 +22,11 @@ function ShowRecipe({ recipe, setShowRecipe }) {
               <li className="show-recipe-ingredients" key={ingredient}>{ingredient} </li>
             )}
           </ol>
-         
+
         </div>
-        
+
       </div>
-    
+
     </div>
   )
 }

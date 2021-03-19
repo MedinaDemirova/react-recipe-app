@@ -408,7 +408,7 @@ img.drinks-image{
   overflow-x: auto;
   height: 34vh;
   display: flex;
-  background: rgb(236, 239, 240);
+  background: whitesmoke;
   padding-left: 5vw;
   padding-right: 5vw;
 }
@@ -431,6 +431,50 @@ img.drinks-image{
 font-size: 2vh;
 position: relative;
 font-family: 'Times New Roman', Times, serif;
+}
+
+/* Show drink */
+
+.show-drink{
+  padding-top: 3vh;
+  width: auto;
+  height: 34vh;
+  display: flex;
+  padding-left: 1vw;
+  background: whitesmoke;
+  margin:3%;
+  font-size: 1vh;
+}
+
+.show-drink img{
+  max-height: 32vh;
+}
+
+.middle{
+  padding-left: 2vh;
+  padding-right: 2vh;
+  width: 25vw;
+}
+
+.middle h2{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 2vh;
+}
+
+.middle h1{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 3vh;
+  margin-bottom: 2vh;
+  color: darkgreen;
+}
+
+.show-drink ol {
+  overflow-y: auto;
+}
+
+.show-drink li{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 2.5vh;
 }
 
 /* Footer */
