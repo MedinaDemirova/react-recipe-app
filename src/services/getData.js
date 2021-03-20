@@ -37,3 +37,4 @@ export async function getDrinksData(setDrinks, drinksCounter) {
         console.log(err)
     }
 }
+

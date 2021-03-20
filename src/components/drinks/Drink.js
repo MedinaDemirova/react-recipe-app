@@ -1,15 +1,10 @@
 import { Link } from "react-router-dom";
 
-function Drink({ drink, setDrinkToShow }) {
-    
-function setDrinkToShowFunc(e){
-e.preventDefault();
-setDrinkToShow(drink);
-}
+function Drink({ drink, }) {
 
     return (
 
-        <div className="drink-card" onClick = {setDrinkToShowFunc}>
+        <div className="drink-card" >
             <Link to={`/drinks/${drink.label}`} >
                 <img src={drink.image} alt="drink" />
 
@@ -17,7 +12,6 @@ setDrinkToShow(drink);
                     {drink.label}
                 </div>
             </Link>
-
         </div>
 
     )

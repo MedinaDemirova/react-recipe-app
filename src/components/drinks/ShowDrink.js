@@ -1,7 +1,12 @@
-function ShowDrink({ drinks, drinkToShow }) {
-    console.log (drinks)
-      let current =drinks.filter( (drink)=> drink.recipe.label == drinkToShow.label && drink.recipe.calories == drinkToShow.calories );
-      current =  current[0].recipe || [];
+import { useParams } from 'react-router-dom';
+
+
+function ShowDrink({drinks}) {
+    const { label } = useParams();
+
+    let current = drinks.filter((drink) => drink.recipe.label === label);
+    current = current[0].recipe || [];
+
     // TO DO: Use url props to filter drinks and show selected
     // Make CSS separeted for every component
     return (
@@ -19,7 +24,7 @@ function ShowDrink({ drinks, drinkToShow }) {
             <ol>
                 {current.ingredientLines ? current.ingredientLines.map(
                     ingredient => (
-                        <li key ={ingredient}>{ingredient}</li>
+                        <li key={ingredient}>{ingredient}</li>
                     )
                 ) : null}
             </ol>

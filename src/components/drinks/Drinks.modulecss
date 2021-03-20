@@ -1,0 +1,106 @@
+/* Drinks */
+
+.drinks-header{
+    text-align: center;
+    margin: 2%;
+    max-height: 20vh;
+    display: flex;
+    border-bottom: solid 2px green;
+   }
+   .get-drinks-btn{
+     max-height: 4vh;
+     margin: 1vh;
+     font-size: 100%;
+     font-weight: 500;
+   
+   }
+    
+   .drinks-header-paragraph{
+     font-size: 2.5vh;
+     text-align: left;
+     width: 70%;
+     margin-left: 5%;
+     margin-right: 20vw;
+     overflow: hidden;
+   }
+   
+   img.drinks-image{
+     max-height:20vh;
+     margin-left: 10vw;
+   }
+   
+   /* Drinks list */
+   
+   .drinks-list{
+     padding-top: 3vh;
+     width: auto;
+     overflow-x: auto;
+     height: 34vh;
+     display: flex;
+     background: whitesmoke;
+     padding-left: 5vw;
+     padding-right: 5vw;
+   }
+   
+   
+   .drink-card{
+     min-width: 20vh;
+     margin: 1%;
+     display: inline;
+     font-size: 2.5vh;
+   
+   }
+   
+   .drink-card img{
+     width:auto;
+     height: 20vh; 
+   }
+   
+   .drink-card-label{
+   font-size: 2vh;
+   position: relative;
+   font-family: 'Times New Roman', Times, serif;
+   }
+   
+   /* Show drink */
+   
+   .show-drink{
+     padding-top: 3vh;
+     min-height: 34vh;
+     display: flex;
+     padding-left: 1vw;
+     background: whitesmoke;
+     margin:3%;
+     font-size: 1vh;
+   }
+   
+   .show-drink img{
+     max-height: 32vh;
+   }
+   
+   .middle{
+     padding-left: 2vh;
+     padding-right: 2vh;
+     width: 25vw;
+   }
+   
+   .middle h2{
+     font-family: 'Times New Roman', Times, serif;
+     font-size: 2vh;
+   }
+   
+   .middle h1{
+     font-family: 'Times New Roman', Times, serif;
+     font-size: 3vh;
+     margin-bottom: 2vh;
+     color: darkgreen;
+   }
+   
+   .show-drink ol {
+     overflow-y: auto;
+   }
+   
+   .show-drink li{
+     font-family: 'Times New Roman', Times, serif;
+     font-size: 2.5vh;
+   }

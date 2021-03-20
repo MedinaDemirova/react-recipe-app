@@ -58,6 +58,7 @@ const App = () => {
 
           <DrinksSection
             getDrinksData={getDrinksData}
+           
           />
 
         </Route>

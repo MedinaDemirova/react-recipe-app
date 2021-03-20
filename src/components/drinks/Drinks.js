@@ -1,6 +1,6 @@
 import Drink from "./Drink";
 
-function Drinks({ drinks, setDrinksCounter, drinksCounter, setDrinkToShow }) {
+function Drinks({ drinks, setDrinksCounter, drinksCounter }) {
 
     function loadMoreDrinks(e) {
         setDrinksCounter(Number(drinksCounter) + 12);
@@ -14,7 +14,6 @@ function Drinks({ drinks, setDrinksCounter, drinksCounter, setDrinkToShow }) {
                 drinks.map(drink => (
                     <Drink drink={drink.recipe}
                      key={`${drink.uri}`+Math.random() }
-                     setDrinkToShow ={setDrinkToShow}
                      />
                 ))
             }

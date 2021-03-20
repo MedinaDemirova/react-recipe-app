@@ -2,14 +2,13 @@ import DrinksHeader from "./Drinks-header";
 import Drinks from "./Drinks";
 import ShowDrink from "./ShowDrink";
 
-import { Route, useParams } from 'react-router-dom';
+
+import { Route } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 
-function DrinksSection({ getDrinksData }) {
-
+function DrinksSection({ getDrinksData, getOneDrink }) {
     const [drinks, setDrinks] = useState([]);
     const [drinksCounter, setDrinksCounter] = useState('12');
-    const [drinkToShow, setDrinkToShow] = useState({});  /*Need to set as default last  drinksToShow state*/
 
     useEffect(() => { getDrinksData(setDrinks, drinksCounter) }, [drinksCounter])
 
@@ -29,14 +28,13 @@ function DrinksSection({ getDrinksData }) {
                     getDrinksData={getDrinksData}
                     setDrinks={setDrinks}
                     drinksCounter={drinksCounter}
-                    setDrinkToShow={setDrinkToShow}
+                  
                 />
             </Route>
 
             <Route path="/drinks/:label">
-
+        
                 <ShowDrink
-                    drinkToShow={drinkToShow}
                     drinks = {drinks}
                 />
 
