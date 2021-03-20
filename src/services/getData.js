@@ -5,7 +5,7 @@ export async function getData(setRecipes, query, counter) {
     try {
         const response = await fetch(`https://api.edamam.com/search?q=${query}&app_id=${YOUR_APP_ID}&app_key=${API_KEY}&from=0&to=${counter}`)
         let data = await response.json();
-        console.log (data.hits)
+        console.log(data.hits)
         return setRecipes(data.hits)
     } catch (err) {
         console.log(err)
@@ -25,7 +25,7 @@ export async function getDataByCategory(setRecipes, query, counter, searchCatego
     }
 }
 
-export async function  getDrinksData(setDrinks,drinksCounter){
+export async function getDrinksData(setDrinks, drinksCounter) {
     try {
         const response = await fetch(
             `https://api.edamam.com/search?q=drinks&app_id=${YOUR_APP_ID}&app_key=${API_KEY}&from=0&to=${drinksCounter}`,

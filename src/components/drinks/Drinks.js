@@ -13,7 +13,7 @@ function Drinks({ drinks, setDrinksCounter, drinksCounter, setDrinkToShow }) {
             {
                 drinks.map(drink => (
                     <Drink drink={drink.recipe}
-                     key={`${drink.calories}${drink.label}` }
+                     key={`${drink.uri}`+Math.random() }
                      setDrinkToShow ={setDrinkToShow}
                      />
                 ))

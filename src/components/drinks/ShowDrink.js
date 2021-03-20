@@ -1,25 +1,25 @@
-function ShowDrink({ drinkToShow, match }) {
-
-    // TO DO: Make new request to database for selected drink (match) and then render  response in this component 
+function ShowDrink({ drinks, drinkToShow }) {
+    console.log (drinks)
+      let current =drinks.filter( (drink)=> drink.recipe.label == drinkToShow.label && drink.recipe.calories == drinkToShow.calories );
+      current =  current[0].recipe || [];
+    // TO DO: Use url props to filter drinks and show selected
     // Make CSS separeted for every component
-    // Fix keys to clear the errors from the console
-
     return (
         <div className="show-drink">
             <div className="left">
-                <img src={drinkToShow.image} alt="drink" />
+                <img src={current.image} alt="drink" />
             </div>
 
             <div className="middle">
-                <h1>{drinkToShow.label}</h1>
-                <h2> Calories: {drinkToShow.calories ? drinkToShow.calories.toFixed(2) : null}</h2>
-                <h2>Total weight: {drinkToShow.totalWeight ? drinkToShow.totalWeight.toFixed(2) : null}</h2>
+                <h1>{current.label}</h1>
+                <h2> Calories: {current.calories ? current.calories.toFixed(2) : null}</h2>
+                <h2>Total weight: {current.totalWeight ? current.totalWeight.toFixed(2) : null}</h2>
             </div>
 
             <ol>
-                {drinkToShow.ingredientLines ? drinkToShow.ingredientLines.map(
+                {current.ingredientLines ? current.ingredientLines.map(
                     ingredient => (
-                        <li>{ingredient}</li>
+                        <li key ={ingredient}>{ingredient}</li>
                     )
                 ) : null}
             </ol>

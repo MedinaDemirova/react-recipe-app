@@ -24,6 +24,7 @@ function Recipe({ recipe }) {
 
             <div style={{ display: showRecipe ? 'block' : 'none' }} className="show-recipe-window" >
                 <ShowRecipe
+                key={recipe.uri || Math.random()}
                     setShowRecipe={setShowRecipe}
                     recipe={recipe}
                 />

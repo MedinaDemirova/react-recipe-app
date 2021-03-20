@@ -19,7 +19,7 @@ function ShowRecipe({ recipe, setShowRecipe }) {
         <div className="show-right">
           <ol className="show-recipe-ingredients-ol">
             {recipe.ingredientLines.map((ingredient) =>
-              <li className="show-recipe-ingredients" key={ingredient}>{ingredient} </li>
+              <li className="show-recipe-ingredients" key={ingredient+ Math.random()}>{ingredient} </li>
             )}
           </ol>
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
 
@@ -10,9 +10,8 @@ import Footer from './components/Footer';
 import Error from "./components/Error";
 import Register from "./components/Auth/Register/Register";
 import Login from "./components/Auth/Login/Login";
-import DrinksHeader from "./components/drinks/Drinks-header";
-import Drinks from "./components/drinks/Drinks";
-import ShowDrink from "./components/drinks/ShowDrink"
+import DrinksSection from './components/drinks/DrinksSection';
+
 
 //Services
 import { sortRecipes } from './services/sortRecipes';
@@ -26,9 +25,7 @@ const App = () => {
   const [counter, setCounter] = useState(12);
   const [sortCriteria, setSortCriteria] = useState('');
   const [searchCategory, setSearchCategory] = useState('');
-  const [drinks, setDrinks] = useState([]);
-  const [drinksCounter, setDrinksCounter] = useState('12');
-  const [drinkToShow, setDrinkToShow] = useState({});  /*Need to set as default last  drinksToShow state*/
+
 
   useEffect(() => { getData(setRecipes, query, counter) }, [counter, query]);
 
@@ -36,7 +33,7 @@ const App = () => {
 
   useEffect(() => { getDataByCategory(setRecipes, query, counter, searchCategory) }, [searchCategory]);
 
-  useEffect(() => { getDrinksData(setDrinks, drinksCounter) }, [drinksCounter])
+
 
   return (
     <div className="app">
@@ -51,12 +48,18 @@ const App = () => {
 
       />
       <Switch>
-        <Route path="/"  >
+        <Route path="/"    >
           <Recipes
             recipes={recipes ? recipes : []}
             counter={counter}
             setSortCriteria={setSortCriteria}
             setCounter={setCounter} />
+
+
+          <DrinksSection
+            getDrinksData={getDrinksData}
+          />
+
         </Route>
 
 
@@ -72,31 +75,8 @@ const App = () => {
         <Route render={() => <Error />} />
       </Switch>
 
-      <DrinksHeader
-        setDrinks={setDrinks}
-        drinksCounter={drinksCounter}
-        getDrinksData={getDrinksData}
-      />
 
-      <Route path="/drinks" >
 
-        <Drinks
-          drinks={drinks ? drinks : []}
-          setDrinksCounter={setDrinksCounter}
-          getDrinksData={getDrinksData}
-          setDrinks={setDrinks}
-          drinksCounter={drinksCounter}
-          setDrinkToShow={setDrinkToShow}
-        />
-      </Route>
-
-      <Route path="/drinks/:label">
-       
-        <ShowDrink 
-        drinkToShow = {drinkToShow }
-        />
-      
-      </Route>
 
       <Footer />
     </div>
