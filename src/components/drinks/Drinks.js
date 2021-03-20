@@ -1,5 +1,4 @@
 import Drink from "./Drink";
-import { Link } from "react-router-dom";
 
 function Drinks({ drinks, setDrinksCounter, drinksCounter, setDrinkToShow }) {
 
@@ -21,7 +20,7 @@ function Drinks({ drinks, setDrinksCounter, drinksCounter, setDrinkToShow }) {
             }
 
             <div className="drink-card" onClick={loadMoreDrinks}>
-                <img src="more.png" alt="" />
+                <img src="more.png" alt="more" />
                 <div className="drink-card-label">
                     Load more drinks..
                 </div>

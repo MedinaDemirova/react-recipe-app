@@ -11,7 +11,7 @@ setDrinkToShow(drink);
 
         <div className="drink-card" onClick = {setDrinkToShowFunc}>
             <Link to={`/drinks/${drink.label}`} >
-                <img src={drink.image} alt="drink-image" />
+                <img src={drink.image} alt="drink" />
 
                 <div className="drink-card-label">
                     {drink.label}

@@ -11,7 +11,7 @@ function ShowRecipe({ recipe, setShowRecipe }) {
       </h1>
       <div className="show-main">
         <div className="show-left">
-          <img className="show-recipe-image" src={recipe.image} alt="" />
+          <img className="show-recipe-image" src={recipe.image} alt="recipe" />
           <p className="show-recipe-calories">  Calories: {(recipe.calories).toFixed(2)}</p>
           <p className="show-recipe-wigth">  Total weight: {(recipe.totalWeight).toFixed(2)}</p>
           <button className="back-to-rec" onClick={setDisplayToNone}>Cancel</button>

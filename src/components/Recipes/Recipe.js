@@ -16,7 +16,7 @@ function Recipe({ recipe }) {
 
             <h2 className="recipe-label">{recipe.label}</h2>
 
-            <img className="recipe-image" src={recipe.image} alt="" />
+            <img className="recipe-image" src={recipe.image} alt="recipe" />
 
            
             <button onClick={showRecipeFunc} className="cook-it">Cook it!</button>

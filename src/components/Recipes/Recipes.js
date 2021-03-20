@@ -13,7 +13,7 @@ function Recipes({ recipes, counter, setCounter,setSortCriteria }) {
     return (
         <div className="recipes-list">
             {recipes.map(recipe => (
-                <Recipe recipe={recipe.recipe} key={`${recipe.recipe.calories}`} />
+                <Recipe recipe={recipe.recipe} key={`${recipe.recipe.id}`} />
             ))
             }
 

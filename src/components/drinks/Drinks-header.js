@@ -6,7 +6,7 @@ function DrinksHeader() {
         <Link to="/drinks"><div className="drinks-header">
 
             <div className="drinks-image">
-                <img className="drinks-image" src="drinks.png" alt="drinks-image" />
+                <img className="drinks-image" src="drinks.png" alt="drinks" />
             </div>
 
             <div className="drinks-header-paragraph">
