@@ -1,6 +1,6 @@
 import React from 'react';
 import Recipe from './Recipe'
-
+import ".//Recipes.css"
 
 function Recipes({ recipes, counter, setCounter,setSortCriteria }) {
 

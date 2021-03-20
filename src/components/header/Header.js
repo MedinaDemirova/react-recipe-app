@@ -1,6 +1,7 @@
 import React from 'react';
 import Search from './Search';
 import { Link } from "react-router-dom";
+import ".//Header.css"
 
 function Header({ user, setQuery, search, setSearch,setCounter }) {
     return (

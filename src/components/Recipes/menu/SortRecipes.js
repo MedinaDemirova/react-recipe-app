@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
-import Dropdownmenu from "../Dropdownmenu";
+import Dropdownmenu from "./dropdownmenu/Dropdownmenu";
+import ".//SortRecipes.css";
 
 function SortRecipes({ setSortCriteria, setSearchCategory }) {
 

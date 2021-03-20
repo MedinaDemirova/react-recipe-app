@@ -1,0 +1,167 @@
+/* Recipes list */
+.recipes-list{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding:1vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    overflow: auto; 
+    text-align:justify; 
+    height: 100vh;
+    border-bottom: solid 2px black;
+    margin-bottom: 2%;
+  }
+  
+  /* Recipe */
+  .recipe{
+  width: 20vh;
+  height: 30vh;
+  margin: 1vh;
+  padding: 3vh;
+  border: solid 2px darkgreen;
+  border-radius: 1rem;
+  align-content: center;
+  text-align: center;
+  align-items: center;
+  justify-items: center;
+  box-shadow: 0px 0px 10px 2px  rgb(118, 133, 87);
+  
+  
+  }
+  
+  .recipe-label{
+    font-size: 2.5vh;
+   height: 35%;
+   text-align: center;
+   justify-content: center;
+  }
+  
+  .recipe-image{
+    max-width: 70%;
+    max-height: 70%;
+    box-shadow: 0px 0px 10px 2px  rgb(145, 160, 112);
+    border-radius: 1rem;
+  }
+  
+  
+  .cook-it{
+    background-image: linear-gradient(62deg, #FBAB7E 0%, rgb(250, 213, 120) 50%);
+    border-radius:1vh;
+    box-shadow: 0px 0px 10px 2px  rgb(145, 160, 112);
+    border: solid 1px black;
+    max-width: 50vw;
+    height: 4vh;
+    align-content: center;
+    font-size: 3vh;
+    padding: 2px;
+  }
+  
+  .show-more{
+    margin: 20px;
+    background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 50%);
+    border-radius:2vh;
+    border: solid 1px black;
+    min-width: 9vw;
+    max-height: 6vh;
+    font-size: 20px;
+    padding: 3px;
+    align-content: center;
+  }
+  
+  /* Show recipe */
+  .show-recipe{
+    text-align: center;
+    background: url("https://images.pexels.com/photos/628241/pexels-photo-628241.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    background-size: cover;
+    height: 70%;
+    width:70%;
+    position:fixed;
+    top:20%;
+    right:10%;
+    box-shadow: inset 0px 0px 30px 10px  rgb(122, 126, 123);
+    border:solid 1.5px rgb(32, 148, 28);
+    border-radius: 2rem;
+  padding: 10px;
+  }
+    
+  .show-recipe-header{
+    display: flex;
+    font-size:100%;
+    font-weight: bolder;
+    max-height: 11%;
+    overflow: hidden;
+    text-decoration: underline;
+    margin-bottom: 3%;
+    justify-content: center;
+    text-align: center;
+    color:rgb(71, 21, 21);
+  }
+  
+  
+  .show-main{
+    display: flex;
+    justify-content: center;
+    height: 50vh;
+  }
+  
+  .show-left{
+    text-align: center;
+    font-size: 10%;
+    width: 40%;
+    color:rgb(36, 11, 11);
+    height: 100%;
+    overflow: auto; 
+    align-items: center;
+  }
+  
+  .show-recipe-calories{
+    font-size: 4vh;
+  }
+  
+  .show-recipe-wigth{
+    font-size: 4vh;
+  }
+  
+  .show-right{
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    width: 60%;
+  height: 100%;
+  padding-left: 3%;
+  
+  }
+  
+  .show-recipe-ingredients-ol{
+    overflow: auto; 
+    text-align:justify; 
+    height: 100%;
+  
+  }
+  .show-recipe-ingredients{
+    text-align: left;
+   font-weight: bold;
+   font-size: 70%;
+   color:rgb(71, 21, 21);
+  }
+  
+  .show-recipe-image{
+    max-width: 40%;
+    max-height: 40%;
+    margin-top: 4%;
+    border-radius: 2rem;
+    box-shadow: 0px 0px 10px 3px  rgb(51, 65, 41);
+  }
+  
+  .back-to-rec{
+    margin: 20px;
+    background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 50%);
+    border-radius:2vh;
+    border: solid 2px black;
+    min-width: 7vw;
+    height: 5vh;
+    font-size: 3vh;
+    align-content: center;
+    
+  }

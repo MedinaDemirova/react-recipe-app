@@ -3,10 +3,10 @@ import { Route, Switch } from 'react-router-dom';
 import './App.css';
 
 //Components
-import Header from './components/Header';
+import Header from './components/header/Header';
 import Recipes from './components/Recipes/Recipes';
-import SortRecipes from './components/Recipes/SortRecipes';
-import Footer from './components/Footer';
+import SortRecipes from './components/Recipes/menu/SortRecipes';
+import Footer from './components/footer/Footer';
 import Error from "./components/Error";
 import Register from "./components/Auth/Register/Register";
 import Login from "./components/Auth/Login/Login";

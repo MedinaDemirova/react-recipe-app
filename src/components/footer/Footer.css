@@ -1,0 +1,33 @@
+/* Footer */
+.footer{
+    display: flex;  
+    justify-content: center;
+    height: auto;
+    background-image:url("https://images.pexels.com/photos/628241/pexels-photo-628241.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    background-size: cover;
+    box-shadow: inset 0px 0px 20px 3px  rgb(32, 32, 31);
+    opacity: 1;
+    padding: 10px;
+    max-height: 10%;
+  }
+  
+  
+  .info{
+    color: rgb(10, 8, 1);
+    text-align: center;
+    
+  }
+  
+  .info h4{
+  text-decoration: underline;
+   font-size: 4vh;
+  
+  }
+  
+  .info div , a {
+    font-size: 3vh;
+    font-weight: 500;
+    text-shadow: 5px 5px 50px 8px  rgb(227, 230, 223);
+   
+  }
+  

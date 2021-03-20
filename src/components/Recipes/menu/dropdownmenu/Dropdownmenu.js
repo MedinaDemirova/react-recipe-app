@@ -1,5 +1,6 @@
 
-import { Link } from "react-router-dom"
+import './/Dropdownmenu.css'
+
 function Dropdownmenu({ setSearchCategory }) {
     function setSearchCategoryFunc(e) {
         e.preventDefault();

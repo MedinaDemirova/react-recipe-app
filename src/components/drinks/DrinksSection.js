@@ -5,6 +5,7 @@ import ShowDrink from "./ShowDrink";
 
 import { Route } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
+import  ".//Drinks.css"
 
 function DrinksSection({ getDrinksData, getOneDrink }) {
     const [drinks, setDrinks] = useState([]);
