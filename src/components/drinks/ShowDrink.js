@@ -7,8 +7,7 @@ function ShowDrink({drinks}) {
     let current = drinks.filter((drink) => drink.recipe.label === label);
     current = current[0].recipe || [];
 
-    // TO DO: Use url props to filter drinks and show selected
-    // Make CSS separeted for every component
+    //  do not load properly when open in another browser???
     return (
         <div className="show-drink">
             <div className="left">
