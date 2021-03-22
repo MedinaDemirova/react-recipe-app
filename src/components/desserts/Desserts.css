@@ -1,0 +1,31 @@
+/*Dessert section */
+
+.dessert-section{
+height: 40vh;
+width: auto;
+position: relative;
+display: flex;
+margin:3vw;
+padding: 2vh;
+align-content: space-around;
+overflow: auto;
+background: rgb(245, 227, 230);
+}
+
+.dessert-section-image{
+display: inline-block;
+width: 100%;
+margin: 1%;
+
+    
+}
+
+.dessert-section-image img{
+    max-height: 30vh;
+}
+
+.dessert-section-image p{
+    font-weight: 500;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 3vh;
+}

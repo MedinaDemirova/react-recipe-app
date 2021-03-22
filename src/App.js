@@ -11,6 +11,7 @@ import Error from "./components/Error";
 import Register from "./components/Auth/Register/Register";
 import Login from "./components/Auth/Login/Login";
 import DrinksSection from './components/drinks/DrinksSection';
+import DessertsSection from './components/desserts/DessertSection';
 
 
 //Services
@@ -59,7 +60,8 @@ const App = () => {
           <DrinksSection
             getDrinksData={getDrinksData} 
           />
-
+           
+          <DessertsSection /> 
 
         </Route>
 

@@ -72,10 +72,12 @@
      background: whitesmoke;
      margin:3%;
      font-size: 1vh;
+     overflow: auto;
+     width: auto;
    }
    
    .show-drink img{
-     max-height: 32vh;
+     max-height: 32vw;
    }
    
    .middle{
