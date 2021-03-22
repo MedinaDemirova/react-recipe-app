@@ -12,7 +12,7 @@ import Register from "./components/Auth/Register/Register";
 import Login from "./components/Auth/Login/Login";
 import DrinksSection from './components/drinks/DrinksSection';
 import DessertsSection from './components/desserts/DessertSection';
-
+import MainMenu from "./components/MainMenu";
 
 //Services
 import { sortRecipes } from './services/sortRecipes';
@@ -43,6 +43,7 @@ const App = () => {
         query={query}
         setCounter={setCounter}
         setQuery={setQuery} />
+        <MainMenu />
       <SortRecipes
         setSortCriteria={setSortCriteria}
         setSearchCategory={setSearchCategory}
@@ -54,9 +55,8 @@ const App = () => {
             recipes={recipes ? recipes : []}
             counter={counter}
             setSortCriteria={setSortCriteria}
-            setCounter={setCounter} />
-
-
+            setCounter={setCounter} 
+            />
           <DrinksSection
             getDrinksData={getDrinksData}
           />

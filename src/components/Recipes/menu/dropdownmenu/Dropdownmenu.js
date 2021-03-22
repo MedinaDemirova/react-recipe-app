@@ -12,7 +12,7 @@ function Dropdownmenu({ setSearchCategory }) {
 
     return (
         <div className="dropdown">
-            <button className="dropbtn">Categories</button>
+            <button className="dropbtn">Category</button>
             <div className="dropdown-content">
                 <option onClick={setSearchCategoryFunc} value="Breakfast">Breakfast</ option>
                 <option onClick={setSearchCategoryFunc} value="Lunch">Lunch</option>

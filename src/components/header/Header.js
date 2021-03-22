@@ -21,6 +21,7 @@ function Header({ user, setQuery, search, setSearch,setCounter }) {
                     setCounter = {setCounter}
                 />
             </div>
+          
         </div>
     )
 }

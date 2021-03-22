@@ -13,8 +13,8 @@ function SortRecipes({ setSortCriteria, setSearchCategory }) {
 
     return (
         <div className="sort-recipes">
-            <Link to="/"> <div className="home-link">Home</div></Link>
-           
+           <div className="sort-lbl">Sort:</div>
+
             <Dropdownmenu  
             setSearchCategory= {setSearchCategory}
             />
@@ -23,7 +23,7 @@ function SortRecipes({ setSortCriteria, setSearchCategory }) {
                 onChange={sortRecipes}
                 name="sort-recipes"
                 id="sort-recipes">
-                <option value="">Sort option</option>
+                <option value="">Select option</option>
                 <option value="A-Z">A-Z</option>
                 <option value="Z-A">Z-A</option>
             </select>
