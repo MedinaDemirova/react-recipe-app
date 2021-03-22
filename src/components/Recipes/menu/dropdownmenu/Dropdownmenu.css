@@ -6,6 +6,8 @@
       border: none;
       width: 15vh;
       position: relative;
+      margin: auto 0 auto auto;
+      max-height: 5vh;
     }
     
     .dropdown {

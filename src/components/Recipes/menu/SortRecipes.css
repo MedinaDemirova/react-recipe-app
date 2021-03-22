@@ -3,11 +3,13 @@
     padding: 1.5px;
     padding-left: 2vw;
     padding-right: 2vw;
-   border-bottom: solid 1px black;
+    border-bottom: solid 1px black;
     max-height: 5vh;
     align-items: flex-end;
     top: 0;
     display: flex;
+    margin: auto 0 auto auto;
+   
     }
     
     .select-sort{
@@ -16,13 +18,16 @@
       max-height: 7vh;
      border: none;
      margin-left: 2vh;
-      max-width: 10vw; 
+      width: 8vw; 
+      
+      
       
     }
 
     .sort-lbl{
       font-size: 2.5vh;
-   text-align: center;
+      text-align: center;
       font-weight: bold;
+      margin-left: 80%;
     }
     

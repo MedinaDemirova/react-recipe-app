@@ -21,7 +21,6 @@ function Drinks({ drinks, setDrinksCounter, drinksCounter }) {
             <div className="drink-card" onClick={loadMoreDrinks}>
                 <img src="more.png" alt="more" />
                 <div className="drink-card-label">
-                    Load more drinks..
                 </div>
 
             </div>

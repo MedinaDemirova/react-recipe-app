@@ -21,7 +21,6 @@ function DessertsList({ dessertsRecipes, setDessertsCounter, dessertsCounter }) 
             <div className="dessert-card" onClick={loadMoreDesserts}>
                 <img src="more.png" alt="more" />
                 <div className="dessert-card-label">
-                    Load more desserts..
                 </div>
 
             </div>
