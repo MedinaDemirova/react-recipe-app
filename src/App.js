@@ -16,7 +16,7 @@ import DessertsSection from './components/desserts/DessertSection';
 
 //Services
 import { sortRecipes } from './services/sortRecipes';
-import { getData, getDataByCategory, getDrinksData } from "./services/getData";
+import { getData, getDataByCategory, getDrinksData, getDesserts } from "./services/getData";
 
 const App = () => {
 
@@ -58,10 +58,12 @@ const App = () => {
 
 
           <DrinksSection
-            getDrinksData={getDrinksData} 
+            getDrinksData={getDrinksData}
           />
-           
-          <DessertsSection /> 
+
+          <DessertsSection
+          getDesserts = {getDesserts}
+          />
 
         </Route>
 

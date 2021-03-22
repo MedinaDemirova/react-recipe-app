@@ -1,35 +1,64 @@
 import ".//Desserts.css";
 import { useEffect, useState } from 'react';
+import DessertsList from "./DessertsList";
+import ShowDessert from "./ShowDessert";
+import { Route, Link } from "react-router-dom";
 
-
-function DessertSection() {
+function DessertSection({ getDesserts }) {
 
     const [dessertQuery, setDessertQuery] = useState('');
+    const [dessertsRecipes, setDessertsRecipes] = useState([]);
+    const [dessertsCounter, setDessertsCounter] = useState(15);
+
+    useEffect(() => { getDesserts(setDessertsRecipes, dessertQuery, dessertsCounter) }, [dessertsCounter, dessertQuery]);
 
     function getDessertsRecipes(e) {
-        console.log(e.target)
-        setDessertQuery(e.target)
+        setDessertQuery(e.target.innerText)
+        document.getElementById("dessert-list").style.display = "flex";
+
     }
 
     return (
-        <div className="dessert-section">
-            <div onClick={getDessertsRecipes} className="dessert-section-image">
-                <img src="desserts.jpg" alt="dessert" />
-                <p>Cakes</p>
-            </div>
-            <div onClick={getDessertsRecipes} className="dessert-section-image">
-                <img src="icecream.jpg" alt="dessert" />
-                <p>Ice Cream</p>
-            </div>
-            <div onClick={getDessertsRecipes} className="dessert-section-image">
-                <img src="cupcakes.jpg" alt="dessert" />
-                <p>Cupcakes</p>
-            </div>
-            <div onClick={getDessertsRecipes} className="dessert-section-image">
-                <img src="cookies.jpg" alt="dessert" />
-                <p>Cookies</p>
-            </div>
-        </div>
+
+        <>
+            <Link to="/desserts">
+                <div className="dessert-section">
+                    <div className="dessert-section-image">
+                        <img src="desserts.jpg" alt="dessert" />
+                        < p onClick={getDessertsRecipes}>Cakes</p>
+                    </div>
+                    <div className="dessert-section-image">
+                        <img src="icecream.jpg" alt="dessert" />
+                        <p onClick={getDessertsRecipes}>Ice Cream</p>
+                    </div>
+                    <div className="dessert-section-image">
+                        <img src="cupcakes.jpg" alt="dessert" />
+                        <p onClick={getDessertsRecipes}>Cupcakes</p>
+                    </div>
+                    <div className="dessert-section-image">
+                        <img src="cookies.jpg" alt="dessert" />
+                        <p onClick={getDessertsRecipes}>Cookies</p>
+                    </div>
+                </div>
+            </Link>
+
+
+            <DessertsList
+                dessertsRecipes={dessertsRecipes}
+                setDessertsCounter={setDessertsCounter}
+                dessertsCounter={dessertsCounter}
+            />
+
+
+
+            <Route path="/desserts/:label">
+
+                <ShowDessert
+                    dessertsRecipes={dessertsRecipes}
+                />
+
+            </Route>
+        </>
 
     )
 }

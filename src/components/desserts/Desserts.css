@@ -29,3 +29,92 @@ margin: 1%;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 3vh;
 }
+.dessert-section-image p:hover{
+color: blue;
+cursor: pointer;
+}
+
+  /* Dessert list */
+  .dess-list{
+      display:none;
+  } 
+
+  .dessert-list-container{
+    
+    padding-top: 3vh;
+     width: auto;
+     overflow-x: auto;
+     height: 34vh;
+     display: flex;
+     background: rgb(237, 247, 248);
+     padding-left: 5vw;
+     padding-right: 5vw;
+  }
+  
+  
+  .dessert-card{
+    display: flex;
+    width: 20vh;
+    margin: 1%;
+    font-size: 2.5vh;
+  }
+  
+  .dessert-card img{
+    width:auto;
+    height: 20vh; 
+  }
+  
+  .dessert-card-label{
+  font-size: 2vh;
+  position: relative;
+  font-family: 'Times New Roman', Times, serif;
+  }
+  
+  /* Show desserts */
+  
+  .show-dessert{
+    padding-top: 3vh;
+    min-height: 34vh;
+    display: flex;
+    padding-left: 1vw;
+    background: rgb(243, 216, 233);
+    border:solid 2px rgb(236, 139, 155);
+    border-radius: 1rem;
+    margin:3%;
+    font-size: 1vh;
+    overflow: auto;
+    width: auto;
+  }
+  
+  .show-dessert img{
+    max-height: 32vw;
+    border-radius: 1rem;
+    border:solid 2px rgb(236, 139, 155);
+  }
+  
+  .middle{
+    padding-left: 2vh;
+    padding-right: 2vh;
+    width: 25vw;
+  }
+  
+  .middle h2{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2vh;
+  }
+  
+  .middle h1{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 3vh;
+    margin-bottom: 2vh;
+    color: rgb(236, 22, 226);
+  }
+  
+  .show-dessert ol {
+    overflow-y: auto;
+  }
+  
+  .show-dessert li{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.5vh;
+  }
