@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Search({ setQuery, search, setSearch ,setCounter}) {
+function Search({ setQuery, search, query, setSearch, setCounter }) {
 
     function setSearcher(e) {
         e.preventDefault();
@@ -16,19 +16,21 @@ function Search({ setQuery, search, setSearch ,setCounter}) {
 
     return (
         <div className="search-form">
-        <form
-            onSubmit={submitSearch}
-            className="searh-form" >
-            <input
-                onChange={setSearcher}
-                className="search-input"
-                type="text" />
-            <button
-                className="search-button"
-                type="submit">
-                Search
+            <form
+                onSubmit={submitSearch}
+                className="searh-form" >
+                <input
+                    onChange={setSearcher}
+                    className="search-input"
+                    type="text"
+                    placeholder={query}
+                />
+                <button
+                    className="search-button"
+                    type="submit">
+                    Search
             </button>
-        </form >
+            </form >
         </div>
     )
 }

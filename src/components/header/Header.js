@@ -3,7 +3,7 @@ import Search from './Search';
 import { Link } from "react-router-dom";
 import ".//Header.css"
 
-function Header({ user, setQuery, search, setSearch,setCounter }) {
+function Header({ user, setQuery,query, search, setSearch,setCounter }) {
     return (
         <div className="head">
             <div className="header">
@@ -19,6 +19,7 @@ function Header({ user, setQuery, search, setSearch,setCounter }) {
                     search={search}
                     setSearch={setSearch}
                     setCounter = {setCounter}
+                    query = {query}
                 />
             </div>
           
