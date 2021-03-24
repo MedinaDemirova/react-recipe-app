@@ -28,6 +28,11 @@
     font-size: 3vh;
     font-weight: 500;
     text-shadow: 5px 5px 50px 8px  rgb(227, 230, 223);
-   
   }
+
+.info a:hover{
+    color:goldenrod;
+    cursor: pointer;
+    text-decoration: underline;
+}
   

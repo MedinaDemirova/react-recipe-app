@@ -8,8 +8,7 @@
     align-items: flex-end;
     top: 0;
     display: flex;
-    margin: auto 0 auto auto;
-   
+   width: 100vw;
     }
     
     .select-sort{
@@ -19,15 +18,16 @@
      border: none;
      margin-left: 2vh;
       width: 8vw; 
-      
-      
-      
+    }
+
+    .select-sort:hover{
+     color:darkgreen;
+     cursor: pointer;
     }
 
     .sort-lbl{
       font-size: 2.5vh;
       text-align: center;
       font-weight: bold;
-      margin-left: 80%;
     }
     

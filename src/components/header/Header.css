@@ -75,3 +75,6 @@ div .search-form{
     font-size: 3vh;
     text-decoration: underline;
   }
+  .register-link:hover{
+   color: rgb(77, 207, 77);
+  }

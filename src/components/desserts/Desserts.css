@@ -58,6 +58,10 @@ cursor: pointer;
     margin: 1%;
     font-size: 2.5vh;
   }
+  .dessert-card:hover{
+   border:solid 2px pink;
+    cursor: pointer;
+}
   
   .dessert-card img{
     width:auto;
