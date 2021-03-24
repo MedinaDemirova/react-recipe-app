@@ -2,14 +2,15 @@ import React, { useState } from 'react';
 import ".//Login.css";
 
 
-function Login({validatePersonalData}) {
+function Login({validatePersonalData, setErrors}) {
 
-    const [errors, setErrors] = useState({});
+   
     const [values, setValues] = useState({});
     
 
     function onSubmitHandler(e) {
         e.preventDefault();
+        setErrors ([]);
         setValues({
                 email: e.target.email.value,
                 password: e.target.password.value
@@ -26,9 +27,11 @@ function Login({validatePersonalData}) {
         
                 <label htmlFor="email" className="email-login">Email</label>
                 <input type="email" name="email" className="email-login" defaultValue={values.email} />
-                {errors.email? <span className = "error-span">{errors.email}</span> : null }
+                 
+
                 <label htmlFor="password" className="password-login">Password</label>
                 <input type="password" name="password" required className="password-login" />
+
 
                 <input type="submit" name="Submit" className="submit-login" />
             </form>

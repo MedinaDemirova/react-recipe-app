@@ -15,11 +15,12 @@ import Login from "./components/Auth/Login/Login";
 import DrinksSection from './components/drinks/DrinksSection';
 import DessertsSection from './components/desserts/DessertSection';
 import MainMenu from "./components/menu/MainMenu";
+import Notifications from "./components/menu/Notifications";
 
 //Services
 import { sortRecipes } from './services/sortRecipes';
 import { getData, getDataByCategory, getDrinksData, getDesserts } from "./services/getData";
-import {validatePersonalData} from "./services/validator";
+import { validatePersonalData } from "./services/validator";
 
 const App = () => {
 
@@ -29,6 +30,7 @@ const App = () => {
   const [counter, setCounter] = useState(18);
   const [sortCriteria, setSortCriteria] = useState('');
   const [searchCategory, setSearchCategory] = useState('');
+  const [errors, setErrors] = useState([]);
 
 
   useEffect(() => { getData(setRecipes, query, counter) }, [counter, query]);
@@ -47,6 +49,10 @@ const App = () => {
         setCounter={setCounter}
         setQuery={setQuery} />
       <MainMenu />
+      <Notifications 
+      errors  = {errors}
+      setErrors = {setErrors}
+      />
 
       <Switch>
         <Route path="/auth/register">
@@ -55,7 +61,8 @@ const App = () => {
 
         <Route path="/auth/login">
           <Login
-          validatePersonalData = {validatePersonalData}
+            validatePersonalData={validatePersonalData}
+            setErrors={setErrors}
           />
         </Route>
 
