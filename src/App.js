@@ -39,6 +39,7 @@ const App = () => {
 
   useEffect(() => { getDataByCategory(setRecipes, query, counter, searchCategory) }, [searchCategory]);
 
+  
 
 
   return (
@@ -49,9 +50,9 @@ const App = () => {
         setCounter={setCounter}
         setQuery={setQuery} />
       <MainMenu />
-      <Notifications 
-      errors  = {errors}
-      setErrors = {setErrors}
+      <Notifications
+        errors={errors}
+        setErrors={setErrors}
       />
 
       <Switch>
