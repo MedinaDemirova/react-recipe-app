@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
+import * as Scroll from 'react-scroll';
+import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 import './App.css';
 
 //Components
@@ -17,6 +19,7 @@ import MainMenu from "./components/menu/MainMenu";
 //Services
 import { sortRecipes } from './services/sortRecipes';
 import { getData, getDataByCategory, getDrinksData, getDesserts } from "./services/getData";
+import {validatePersonalData} from "./services/validator";
 
 const App = () => {
 
@@ -51,7 +54,9 @@ const App = () => {
         </Route>
 
         <Route path="/auth/login">
-          <Login />
+          <Login
+          validatePersonalData = {validatePersonalData}
+          />
         </Route>
 
         <Route path="/"    >
