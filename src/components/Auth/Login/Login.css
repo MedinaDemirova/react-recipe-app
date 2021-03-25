@@ -43,7 +43,16 @@ input.email-login ,input.password-login{
     cursor: pointer;
 }
 
+.login-p{
+   align-content: center;
+    display: inline;
+    font-size: 2.5vh;
 
+}
+
+.register-link{
+    font-size: 2.5vh;
+}
 
 
 

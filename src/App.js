@@ -14,7 +14,7 @@ import ProfilePage from "./components/Auth/Profile/ProfilePage";
 import DrinksSection from './components/drinks/DrinksSection';
 import DessertsSection from './components/desserts/DessertSection';
 import MainMenu from "./components/menu/MainMenu";
-import Notifications from "./components/menu/Notifications";
+
 
 //Services
 import { sortRecipes } from './services/sortRecipes';
@@ -51,15 +51,10 @@ const App = () => {
         setCounter={setCounter}
         setQuery={setQuery} />
       <MainMenu />
-      <Notifications
-        errors={errors}
-        setErrors={setErrors}
-      />
-
+     
       <Switch>
-      user?
+     user? 
         <ProfilePage path ="/my-profile" /> :
-  
         <Route path="/auth/register">
           <Register />
         </Route>
