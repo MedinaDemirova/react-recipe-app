@@ -21,6 +21,7 @@ import Notifications from "./components/menu/Notifications";
 import { sortRecipes } from './services/sortRecipes';
 import { getData, getDataByCategory, getDrinksData, getDesserts } from "./services/getData";
 import { validatePersonalData } from "./services/validator";
+import {logInDataBase} from "./services/auth";
 
 const App = () => {
 
@@ -64,6 +65,7 @@ const App = () => {
           <Login
             validatePersonalData={validatePersonalData}
             setErrors={setErrors}
+            logInDataBase ={logInDataBase}
           />
         </Route>
 
