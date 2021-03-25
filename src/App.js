@@ -10,6 +10,7 @@ import Footer from './components/footer/Footer';
 import Error from "./components/Error";
 import Register from "./components/Auth/Register/Register";
 import Login from "./components/Auth/Login/Login";
+import ProfilePage from "./components/Auth/Profile/ProfilePage";
 import DrinksSection from './components/drinks/DrinksSection';
 import DessertsSection from './components/desserts/DessertSection';
 import MainMenu from "./components/menu/MainMenu";
@@ -43,6 +44,7 @@ const App = () => {
 
   return (
     <div className="app">
+   
       <Header search={search}
         setSearch={setSearch}
         query={query}
@@ -55,6 +57,9 @@ const App = () => {
       />
 
       <Switch>
+      user?
+        <ProfilePage path ="/my-profile" /> :
+  
         <Route path="/auth/register">
           <Register />
         </Route>
