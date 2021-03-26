@@ -9,6 +9,7 @@ import Recipe from './Recipe';
 import SortRecipes from '..//Recipes/menu/SortRecipes';
 import DrinksSection from '../drinks/DrinksSection';
 import DessertsSection from '../desserts/DessertSection';
+import MainMenu from "../menu/MainMenu";
 
 
 function Recipes({ getData, getDataByCategory, sortRecipes, getDesserts, getDrinksData }) {
@@ -36,8 +37,9 @@ function Recipes({ getData, getDataByCategory, sortRecipes, getDesserts, getDrin
             <Header
                 query={query}
                 setCounter={setCounter}
-                setQuery={setQuery} />
+                setQuery={setQuery}
             />
+            <MainMenu />
             <Route path="/">
                 <SortRecipes
                     setSortCriteria={setSortCriteria}

@@ -25,9 +25,9 @@ const App = () => {
           <Auth validatePersonalData={validatePersonalData} />
         </Route>
 
-        <Route path="/"    >
+        <Route path="/">
 
-          <MainMenu />
+      
 
           <Recipes
             sortRecipes={sortRecipes}
