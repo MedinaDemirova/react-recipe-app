@@ -4,17 +4,20 @@ import { Route } from "react-router-dom";
 import ".//Recipes.css";
 
 //Components
+import Header from "../header/Header";
 import Recipe from './Recipe';
 import SortRecipes from '..//Recipes/menu/SortRecipes';
 import DrinksSection from '../drinks/DrinksSection';
 import DessertsSection from '../desserts/DessertSection';
 
 
-function Recipes({ counter, setCounter, query, getData, getDataByCategory, sortRecipes, getDesserts, getDrinksData }) {
+function Recipes({ getData, getDataByCategory, sortRecipes, getDesserts, getDrinksData }) {
 
     const [sortCriteria, setSortCriteria] = useState('');
     const [searchCategory, setSearchCategory] = useState('');
     const [recipes, setRecipes] = useState([]);
+    const [query, setQuery] = useState('chicken');
+    const [counter, setCounter] = useState(18);
 
     useEffect(() => { getData(setRecipes, query, counter) }, [counter, query]);
 
@@ -30,6 +33,11 @@ function Recipes({ counter, setCounter, query, getData, getDataByCategory, sortR
 
     return (
         <>
+            <Header
+                query={query}
+                setCounter={setCounter}
+                setQuery={setQuery} />
+            />
             <Route path="/">
                 <SortRecipes
                     setSortCriteria={setSortCriteria}

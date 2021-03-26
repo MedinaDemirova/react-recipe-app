@@ -29,6 +29,7 @@ input.email-login ,input.password-login{
     border: none;
     background: transparent;
     border-bottom: 1px solid darkgreen;
+    width: 20vw;
 }
 .submit-login{
     width: 10vh;
