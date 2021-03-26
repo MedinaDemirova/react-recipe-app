@@ -5,7 +5,7 @@ import './App.css';
 //Components
 import Header from './components/header/Header';
 import Recipes from './components/Recipes/Recipes';
-import SortRecipes from './components/Recipes/menu/SortRecipes';
+
 import Footer from './components/footer/Footer';
 import Error from "./components/Error";
 import Register from "./components/Auth/Register/Register";
@@ -24,22 +24,8 @@ import { logInDataBase } from "./services/auth";
 
 const App = () => {
 
-  const [recipes, setRecipes] = useState([]);
   const [query, setQuery] = useState('chicken');
   const [counter, setCounter] = useState(18);
-  const [sortCriteria, setSortCriteria] = useState('');
-  const [searchCategory, setSearchCategory] = useState('');
-
-
-
-  useEffect(() => { getData(setRecipes, query, counter) }, [counter, query]);
-
-  useEffect(() => { sortRecipes(sortCriteria, recipes, setRecipes) }, [sortCriteria]);
-
-  useEffect(() => { getDataByCategory(setRecipes, query, counter, searchCategory) }, [searchCategory]);
-
-
-
 
   return (
     <div className="app">
@@ -65,16 +51,15 @@ const App = () => {
         </Route>
 
         <Route path="/"    >
-          <SortRecipes
-            setSortCriteria={setSortCriteria}
-            setSearchCategory={setSearchCategory}
-          />
           <Recipes
-            recipes={recipes ? recipes : []}
             counter={counter}
-            setSortCriteria={setSortCriteria}
             setCounter={setCounter}
+            query={query}
+            sortRecipes={sortRecipes}
+            getData={getData}
+            getDataByCategory={getDataByCategory}
           />
+          
           <DrinksSection
             getDrinksData={getDrinksData}
           />
@@ -84,10 +69,6 @@ const App = () => {
           />
 
         </Route>
-
-
-
-
 
         <Route render={() => <Error />} />
       </Switch>
