@@ -7,12 +7,8 @@ import Header from './components/header/Header';
 import Recipes from './components/Recipes/Recipes';
 import Footer from './components/footer/Footer';
 import Error from "./components/Error";
-import Register from "./components/Auth/Register/Register";
-import Login from "./components/Auth/Login/Login";
-import ProfilePage from "./components/Auth/Profile/ProfilePage";
-import DrinksSection from './components/drinks/DrinksSection';
-import DessertsSection from './components/desserts/DessertSection';
 import MainMenu from "./components/menu/MainMenu";
+import Auth from "./components/Auth/Auth";
 
 
 //Services
@@ -28,26 +24,22 @@ const App = () => {
   return (
     <div className="app">
 
-      <Header
-        query={query}
-        setCounter={setCounter}
-        setQuery={setQuery} />
-      <MainMenu />
 
       <Switch>
-        user?
-        <ProfilePage path="/my-profile" /> :
-        <Route path="/auth/register">
-          <Register />
+     
+        <Route path="/auth">
+        <MainMenu />
+          <Auth validatePersonalData={validatePersonalData} />
         </Route>
 
-        <Route path="/auth/login">
-          <Login
-            validatePersonalData={validatePersonalData}
-          />
-        </Route>
 
         <Route path="/"    >
+          <Header
+            query={query}
+            setCounter={setCounter}
+            setQuery={setQuery} />
+          <MainMenu />
+
           <Recipes
             counter={counter}
             setCounter={setCounter}
@@ -55,14 +47,9 @@ const App = () => {
             sortRecipes={sortRecipes}
             getData={getData}
             getDataByCategory={getDataByCategory}
-          />
-
-          <DrinksSection
             getDrinksData={getDrinksData}
-          />
-
-          <DessertsSection
             getDesserts={getDesserts}
+
           />
 
         </Route>

@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import {Route} from "react-router-dom";
-import Recipe from './Recipe'
-import ".//Recipes.css"
-import SortRecipes from '..//Recipes/menu/SortRecipes';
+import { Route } from "react-router-dom";
 
-function Recipes({ counter, setCounter, query, getData, getDataByCategory, sortRecipes }) {
+import ".//Recipes.css";
+
+//Components
+import Recipe from './Recipe';
+import SortRecipes from '..//Recipes/menu/SortRecipes';
+import DrinksSection from '../drinks/DrinksSection';
+import DessertsSection from '../desserts/DessertSection';
+
+
+function Recipes({ counter, setCounter, query, getData, getDataByCategory, sortRecipes, getDesserts, getDrinksData }) {
 
     const [sortCriteria, setSortCriteria] = useState('');
     const [searchCategory, setSearchCategory] = useState('');
@@ -24,22 +30,34 @@ function Recipes({ counter, setCounter, query, getData, getDataByCategory, sortR
 
     return (
         <>
-            <SortRecipes
-                setSortCriteria={setSortCriteria}
-                setSearchCategory={setSearchCategory}
-            />
+            <Route path="/">
+                <SortRecipes
+                    setSortCriteria={setSortCriteria}
+                    setSearchCategory={setSearchCategory}
+                />
 
-            <div className="recipes-list">
-                {recipes? recipes.map(recipe => (
-                    <Recipe recipe={recipe.recipe} key={`${recipe.recipe.uri}`} /> 
-                )):null
-                }
+                <div className="recipes-list">
+                    {recipes ? recipes.map(recipe => (
+                        <Recipe recipe={recipe.recipe} key={`${recipe.recipe.uri}`} />
+                    )) : null
+                    }
 
-                <button
-                    className="show-more"
-                    onClick={loadMoreRecipes}>
-                    Show more</button>
-            </div>
+                    <button
+                        className="show-more"
+                        onClick={loadMoreRecipes}>
+                        Show more</button>
+                </div>
+
+                <DrinksSection
+                    getDrinksData={getDrinksData}
+                />
+
+                <DessertsSection
+                    getDesserts={getDesserts}
+                />
+            </Route>
+
+
         </>
     )
 }
