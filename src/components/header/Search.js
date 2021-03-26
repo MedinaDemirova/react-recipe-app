@@ -1,6 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-function Search({ setQuery, search, query, setSearch, setCounter }) {
+function Search({ setQuery,  query, setCounter }) {
+
+    const [search, setSearch] = useState("");
 
     function setSearcher(e) {
         e.preventDefault();

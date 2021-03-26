@@ -20,17 +20,16 @@ import MainMenu from "./components/menu/MainMenu";
 import { sortRecipes } from './services/sortRecipes';
 import { getData, getDataByCategory, getDrinksData, getDesserts } from "./services/getData";
 import { validatePersonalData } from "./services/validator";
-import {logInDataBase} from "./services/auth";
+import { logInDataBase } from "./services/auth";
 
 const App = () => {
 
   const [recipes, setRecipes] = useState([]);
-  const [search, setSearch] = useState("");
   const [query, setQuery] = useState('chicken');
   const [counter, setCounter] = useState(18);
   const [sortCriteria, setSortCriteria] = useState('');
   const [searchCategory, setSearchCategory] = useState('');
-  const [errors, setErrors] = useState([]);
+
 
 
   useEffect(() => { getData(setRecipes, query, counter) }, [counter, query]);
@@ -39,22 +38,21 @@ const App = () => {
 
   useEffect(() => { getDataByCategory(setRecipes, query, counter, searchCategory) }, [searchCategory]);
 
-  
+
 
 
   return (
     <div className="app">
-   
-      <Header search={search}
-        setSearch={setSearch}
+
+      <Header
         query={query}
         setCounter={setCounter}
         setQuery={setQuery} />
       <MainMenu />
-     
+
       <Switch>
-     user? 
-        <ProfilePage path ="/my-profile" /> :
+        user?
+        <ProfilePage path="/my-profile" /> :
         <Route path="/auth/register">
           <Register />
         </Route>
@@ -62,8 +60,7 @@ const App = () => {
         <Route path="/auth/login">
           <Login
             validatePersonalData={validatePersonalData}
-            setErrors={setErrors}
-            logInDataBase ={logInDataBase}
+            logInDataBase={logInDataBase}
           />
         </Route>
 
