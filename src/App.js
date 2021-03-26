@@ -5,7 +5,6 @@ import './App.css';
 //Components
 import Header from './components/header/Header';
 import Recipes from './components/Recipes/Recipes';
-
 import Footer from './components/footer/Footer';
 import Error from "./components/Error";
 import Register from "./components/Auth/Register/Register";
@@ -20,7 +19,6 @@ import MainMenu from "./components/menu/MainMenu";
 import { sortRecipes } from './services/sortRecipes';
 import { getData, getDataByCategory, getDrinksData, getDesserts } from "./services/getData";
 import { validatePersonalData } from "./services/validator";
-import { logInDataBase } from "./services/auth";
 
 const App = () => {
 
@@ -46,7 +44,6 @@ const App = () => {
         <Route path="/auth/login">
           <Login
             validatePersonalData={validatePersonalData}
-            logInDataBase={logInDataBase}
           />
         </Route>
 
@@ -59,7 +56,7 @@ const App = () => {
             getData={getData}
             getDataByCategory={getDataByCategory}
           />
-          
+
           <DrinksSection
             getDrinksData={getDrinksData}
           />
