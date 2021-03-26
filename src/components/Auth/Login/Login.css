@@ -55,5 +55,13 @@ input.email-login ,input.password-login{
     font-size: 2.5vh;
 }
 
+.auth-error{
+    color: red;
+    font-size: 3vh;
+    display: inline;
+    text-align: center;
+    margin:3vh;
+
+}
 
 

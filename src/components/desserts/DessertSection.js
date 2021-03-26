@@ -3,8 +3,9 @@ import { useEffect, useState } from 'react';
 import DessertsList from "./DessertsList";
 import ShowDessert from "./ShowDessert";
 import { Route, Link } from "react-router-dom";
+import {getDesserts} from "../../services/getData";
 
-function DessertSection({ getDesserts }) {
+function DessertSection() {
 
     const [dessertQuery, setDessertQuery] = useState('');
     const [dessertsRecipes, setDessertsRecipes] = useState([]);

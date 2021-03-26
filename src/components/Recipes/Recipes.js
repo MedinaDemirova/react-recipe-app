@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Route } from "react-router-dom";
-
 import ".//Recipes.css";
+
+//Services
+import { getData, getDataByCategory } from "../../services/getData"
+import { sortRecipes } from "../../services/sortRecipes"
 
 //Components
 import Header from "../header/Header";
@@ -12,7 +15,7 @@ import DessertsSection from '../desserts/DessertSection';
 import MainMenu from "../menu/MainMenu";
 
 
-function Recipes({ getData, getDataByCategory, sortRecipes, getDesserts, getDrinksData }) {
+function Recipes() {
 
     const [sortCriteria, setSortCriteria] = useState('');
     const [searchCategory, setSearchCategory] = useState('');
@@ -58,13 +61,9 @@ function Recipes({ getData, getDataByCategory, sortRecipes, getDesserts, getDrin
                         Show more</button>
                 </div>
 
-                <DrinksSection
-                    getDrinksData={getDrinksData}
-                />
+                <DrinksSection />
 
-                <DessertsSection
-                    getDesserts={getDesserts}
-                />
+                <DessertsSection />
             </Route>
 
 

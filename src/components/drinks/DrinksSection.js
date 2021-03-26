@@ -2,12 +2,13 @@ import DrinksHeader from "./Drinks-header";
 import Drinks from "./Drinks";
 import ShowDrink from "./ShowDrink";
 
+import {getDrinksData} from "../../services/getData";
 
 import { Route } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import  ".//Drinks.css"
 
-function DrinksSection({ getDrinksData, getOneDrink }) {
+function DrinksSection() {
     const [drinks, setDrinks] = useState([]);
     const [drinksCounter, setDrinksCounter] = useState('12');
 

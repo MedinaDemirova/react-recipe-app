@@ -6,14 +6,15 @@ function Register() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [repassword, setRePassword] = useState('');
-    const [error, setError] = useState(null);
-
+    const [error, setError] = useState('');
 
     const signIUpWithEmailAndPasswordHandler = (e, email, password) => { e.preventDefault() };
 
     function emailHandler(e) { setEmail(e.target.value) };
 
     function passwordHandler(e) { setPassword(e.target.value) };
+
+    function rePasswordHandler(e) {setRePassword(e.target.value)};
 
 
     return (
@@ -53,7 +54,7 @@ function Register() {
                     className="password-login"
                     value={repassword}
                     placeholder="Repeat Password"
-                    onChange={passwordHandler} />    
+                    onChange={rePasswordHandler} />    
 
                 <button
                     type="submit"

@@ -9,10 +9,6 @@ import Error from "./components/Error";
 import MainMenu from "./components/menu/MainMenu";
 import Auth from "./components/Auth/Auth";
 
-//Services
-import { sortRecipes } from './services/sortRecipes';
-import { getData, getDataByCategory, getDrinksData, getDesserts } from "./services/getData";
-import { validatePersonalData } from "./services/validator";
 
 const App = () => {
 
@@ -22,21 +18,12 @@ const App = () => {
       <Switch>
         <Route path="/auth">
           <MainMenu />
-          <Auth validatePersonalData={validatePersonalData} />
+          <Auth
+          />
         </Route>
 
         <Route path="/">
-
-      
-
-          <Recipes
-            sortRecipes={sortRecipes}
-            getData={getData}
-            getDataByCategory={getDataByCategory}
-            getDrinksData={getDrinksData}
-            getDesserts={getDesserts}
-          />
-
+          <Recipes />
         </Route>
 
         <Route render={() => <Error />} />

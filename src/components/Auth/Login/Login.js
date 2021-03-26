@@ -1,17 +1,26 @@
 import React, { useState } from 'react';
 import ".//Login.css";
 import { Link } from "react-router-dom";
+import { auth } from '../../../firebase';
 
 
 
-function Login({ validatePersonalData, setErrors, logInDataBase }) {
+function Login() {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState(null);
 
 
-    const signInWithEmailAndPasswordHandler = (e, email, password) => { e.preventDefault() };
+    const signInWithEmailAndPasswordHandler =  async(e, email, password) => {
+        e.preventDefault();
+        try{    
+        let user = await auth.signInWithEmailAndPassword(email, password);
+        console.log(user)
+        }catch(err){
+            setError(err.message)
+        }
+    };
 
     function emailHandler(e) { setEmail(e.target.value) };
 
@@ -22,7 +31,7 @@ function Login({ validatePersonalData, setErrors, logInDataBase }) {
     return (
         <div className="login" >
 
-            {error !== null && <div className="py-4 bg-red-600 w-full text-white text-center mb-3">{error}</div>}
+            {error !== null && <div className="auth-error">{error}</div>}
 
             <form className="log-in-container">
                 <h1>Log in</h1>
