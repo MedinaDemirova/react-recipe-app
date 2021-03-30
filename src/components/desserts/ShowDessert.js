@@ -19,7 +19,7 @@ function ShowDessert({dessertsRecipes}) {
                 <h2> Calories: {current.calories ? current.calories.toFixed(2) : null}</h2>
                 <h2>Total weight: {current.totalWeight ? current.totalWeight.toFixed(2) : null}</h2>
             </div>
-
+            
             <ol>
                 {current.ingredientLines ? current.ingredientLines.map(
                     ingredient => (

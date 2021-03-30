@@ -99,7 +99,7 @@ cursor: pointer;
   .middle{
     padding-left: 2vh;
     padding-right: 2vh;
-    width: 25vw;
+   
   }
   
   .middle h2{
@@ -112,10 +112,12 @@ cursor: pointer;
     font-size: 3vh;
     margin-bottom: 2vh;
     color: rgb(230, 109, 179);
+    max-width: 30%;
   }
   
   .show-dessert ol {
     overflow-y: auto;
+    width: 50%;
   }
   
   .show-dessert li{
