@@ -23,8 +23,7 @@ function SortRecipes({ setSortCriteria, setSearchCategory }) {
                 onChange={sortRecipes}
                 name="sort-recipes"
                 id="sort-recipes">
-                <option value="">Select option</option>
-                <option value="A-Z">A-Z</option>
+                <option selected value="A-Z">A-Z</option>
                 <option value="Z-A">Z-A</option>
             </select>
         </div>
