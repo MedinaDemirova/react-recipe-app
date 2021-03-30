@@ -8,7 +8,7 @@
     align-items: flex-end;
     top: 0;
     display: flex;
-   width: 100%;
+   width: auto;
     }
     
     .select-sort{
