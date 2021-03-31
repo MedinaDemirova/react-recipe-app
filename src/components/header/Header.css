@@ -20,18 +20,9 @@
   font-weight: 650
   }
   
-
-  
- 
-  @media screen and (min-width: 0px) and (max-width: 400px) {
-    .header-p .header-p-sec{
-       display: none; }   /* hide it small screens */
-  }
-  @media screen and (min-width: 401) and (max-width:1024){
-    .header-p{
+  .header-p{
       font-size: 3vh;
       font-weight: 600;
-     
     }
     
     .header-p-sec{
@@ -39,7 +30,7 @@
       font-weight: 600;
       margin-bottom:1%;
     }
-  }
+  
 
 
   /* Search */
@@ -80,10 +71,10 @@ div .search-form{
 
   .register-link{
     font-weight: bold;
-    color:rgb(9, 126, 62);
-    font-size: 3vh;
+    color:rgb(8, 56, 31);
+    font-size: 4vh;
     text-decoration: underline;
   }
   .register-link:hover{
-   color: rgb(77, 207, 77);
+   color: rgb(58, 94, 58);
   }
