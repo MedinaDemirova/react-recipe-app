@@ -2,12 +2,12 @@
 .head{
     background-image: url("https://images.pexels.com/photos/349609/pexels-photo-349609.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
     background-size: cover;
-    padding-bottom: 5%;
+    padding-bottom: 2%;
     box-shadow: inset 0px 0px 20px 5px  rgb(52, 53, 50);
   }
   
   .header{
-    min-height: 11vh;
+    height: 18vh;
     text-align: center;
     padding-top: 4vh;
    margin-bottom: 4%;
@@ -20,16 +20,25 @@
   font-weight: 650
   }
   
-  .header-p{
-    font-size: 3vh;
-    font-weight: 600;
-   
-  }
+
   
-  .header-p-sec{
-    font-size: 3vh;
-    font-weight: 600;
-    margin-bottom:1%;
+ 
+  @media screen and (min-width: 0px) and (max-width: 400px) {
+    .header-p .header-p-sec{
+       display: none; }   /* hide it small screens */
+  }
+  @media screen and (min-width: 401) and (max-width:1024){
+    .header-p{
+      font-size: 3vh;
+      font-weight: 600;
+     
+    }
+    
+    .header-p-sec{
+      font-size: 3vh;
+      font-weight: 600;
+      margin-bottom:1%;
+    }
   }
 
 
