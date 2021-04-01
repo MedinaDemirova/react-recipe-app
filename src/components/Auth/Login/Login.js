@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ".//Login.css";
 import { Link } from "react-router-dom";
 import { auth } from '../../../firebase';
-
+import { validatePersonalData } from "../../../services/validator";
 
 
 function Login({ setUser }) {
@@ -11,27 +11,25 @@ function Login({ setUser }) {
     const [password, setPassword] = useState('');
     const [error, setError] = useState(null);
 
-
     const signInWithEmailAndPasswordHandler = async (e, email, password) => {
         e.preventDefault();
-        try {
-            let user = await auth.signInWithEmailAndPassword(email, password);
-            localStorage.setItem("user", user.user.refreshToken);
-            localStorage.setItem("email", user.user.email);
-            setUser({ email: user.user.email, token: user.user.refreshToken });
-            console.log(user.user.refreshToken)
+        if (validatePersonalData(email, password)) {
+            try {
+                let user = await auth.signInWithEmailAndPassword(email, password);
+                localStorage.setItem("user", user.user.refreshToken);
+                localStorage.setItem("email", user.user.email);
+                setUser({ email: user.user.email, token: user.user.refreshToken });
 
-            console.log(user.user.email)
-        } catch (err) {
-            setError(err.message)
+            } catch (err) {
+                setError(err.message)
+            }
+        } else {
+            setError("Valid email and password required")
         }
     };
 
     function emailHandler(e) { setEmail(e.target.value) };
-
     function passwordHandler(e) { setPassword(e.target.value) };
-
-
 
     return (
         <div className="login" >
@@ -40,7 +38,7 @@ function Login({ setUser }) {
 
             <form className="log-in-container">
                 {error !== null && <div className="auth-error">{error}</div>}
-              
+
 
                 <label htmlFor="email" className="email-login">Email</label>
                 <input

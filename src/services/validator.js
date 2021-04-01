@@ -1,13 +1,8 @@
-export function validatePersonalData(values) {
-    console.log(values)
-    let errors = [];
-    if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
-        errors.push('Invalid email address');
+export function validatePersonalData(email,password) {
+    console.log(email)
+    if (/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email) && password.length > 5 ) {
+      return true;
+    }else {
+        return false
     }
-
-    if (values.password.length < 6) {
-        errors.push('Password must contain more than 5 symbols');
-    }
-
-    return errors;
 };
