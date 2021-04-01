@@ -36,6 +36,16 @@ top: 1%;
 
 .signout{
   position: absolute;
-right: 10%;
+right: 1%;
 top: 1%;
+}
+
+.hello-user{
+  display: inline;
+  margin-right: 4vh;
+  font-weight: 300;
+  font-size: 3vh;
+  position: absolute;
+  right: 50%;
+  top: 1%;
 }

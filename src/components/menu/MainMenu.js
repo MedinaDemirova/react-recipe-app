@@ -15,13 +15,14 @@ function MainMenu({ user, setUser }) {
 
             <Link to="/"> <div className="main-menu-link home">Home</div></Link>
 
+            {user.email && <span className="hello-user">Hello, {user.email}</span>}
 
-            <Link to="/" onClick={signUserOut} > <div className="main-menu-link signout">Sign out</div></Link>
+            {user.email && <Link to="/" onClick={signUserOut} > <div className="main-menu-link signout">Sign out</div></Link>}
 
-            <Link to="/auth/login"> <div className="main-menu-link signin">Sign in</div></Link>
+            {!user.email && < Link to="/auth/login"> <div className="main-menu-link signin">Sign in</div></Link>}
 
 
-        </div>
+        </div >
     )
 }
 export default MainMenu;

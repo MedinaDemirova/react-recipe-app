@@ -78,3 +78,13 @@ div .search-form{
   .register-link:hover{
    color: rgb(58, 94, 58);
   }
+
+  @media screen and (max-width: 755px) 
+ 
+{    
+ 
+  .header-p { font-size: 2vh } 
+  .header-p-sec {display: none}
+  .header-main {font-size: 4vh}
+ 
+}
