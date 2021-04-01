@@ -15,7 +15,7 @@ function MainMenu({ user, setUser }) {
 
             <Link to="/"> <div className="main-menu-link home">Home</div></Link>
 
-            {user.email && <span className="hello-user">Hello, {user.email}</span>}
+            {user.email && <span className="hello-user">Hello, {user.email.split('@')[0]} </span>}
 
             {user.email && <Link to="/" onClick={signUserOut} > <div className="main-menu-link signout">Sign out</div></Link>}
 
