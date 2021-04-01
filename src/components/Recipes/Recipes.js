@@ -17,7 +17,7 @@ import MainMenu from "../menu/MainMenu";
 
 function Recipes() {
 
-    const [sortCriteria, setSortCriteria] = useState('');
+    const [sortCriteria, setSortCriteria] = useState('A-Z');
     const [searchCategory, setSearchCategory] = useState('');
     const [recipes, setRecipes] = useState([]);
     const [query, setQuery] = useState('chicken');
