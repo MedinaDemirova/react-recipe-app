@@ -18,74 +18,75 @@ function Login({ setUser }) {
             let user = await auth.signInWithEmailAndPassword(email, password);
             localStorage.setItem("user", user.user.refreshToken);
             localStorage.setItem("email", user.user.email);
-        setUser({ email: user.user.email, token: user.user.refreshToken });
-        console.log(user.user.refreshToken)
+            setUser({ email: user.user.email, token: user.user.refreshToken });
+            console.log(user.user.refreshToken)
 
-        console.log(user.user.email)
-    }catch (err) {
-        setError(err.message)
-    }
-};
+            console.log(user.user.email)
+        } catch (err) {
+            setError(err.message)
+        }
+    };
 
-function emailHandler(e) { setEmail(e.target.value) };
+    function emailHandler(e) { setEmail(e.target.value) };
 
-function passwordHandler(e) { setPassword(e.target.value) };
-
-
-
-return (
-    <div className="login" >
-
-        {error !== null && <div className="auth-error">{error}</div>}
-
-        <form className="log-in-container">
-            <h1>Log in</h1>
-
-            <label htmlFor="email" className="email-login">Email</label>
-            <input
-                type="email"
-                name="email"
-                className="email-login"
-                required
-                onChange={emailHandler}
-                value={email}
-                placeholder="E.g: faruq123@gmail.com" />
+    function passwordHandler(e) { setPassword(e.target.value) };
 
 
-            <label htmlFor="password" className="password-login">Password</label>
-            <input
-                type="password"
-                name="password"
-                required
-                className="password-login"
-                value={password}
-                placeholder="Your Password"
-                onChange={passwordHandler} />
 
-            <button
-                type="submit"
-                name="Submit"
-                className="submit-login"
-                onClick={(event) => { signInWithEmailAndPasswordHandler(event, email, password) }}>
-                Submit
+    return (
+        <div className="login" >
+
+
+
+            <form className="log-in-container">
+                {error !== null && <div className="auth-error">{error}</div>}
+              
+
+                <label htmlFor="email" className="email-login">Email</label>
+                <input
+                    type="email"
+                    name="email"
+                    className="email-login"
+                    required
+                    onChange={emailHandler}
+                    value={email}
+                    placeholder="E.g: faruq123@gmail.com" />
+
+
+                <label htmlFor="password" className="password-login">Password</label>
+                <input
+                    type="password"
+                    name="password"
+                    required
+                    className="password-login"
+                    value={password}
+                    placeholder="Your Password"
+                    onChange={passwordHandler} />
+
+                <button
+                    type="submit"
+                    name="Submit"
+                    className="submit-login"
+                    onClick={(event) => { signInWithEmailAndPasswordHandler(event, email, password) }}>
+                    Sign in
                     </button>
 
-            <br />
-            <p className="login-p">
                 <br />
-                Don't have an account? <Link to="/auth/register" className="register-link">
-                    Sign up here
+                <p className="login-p">
+                    <br />
+                    Don't have an account? <Link to="/auth/register" className="register-link">
+                        Sign up here
           </Link>
-            </p>
+                </p>
 
 
 
 
-        </form>
+            </form>
 
 
-    </div>
-)
+        </div>
+    )
 }
 
 export default Login;

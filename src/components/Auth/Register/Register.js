@@ -23,8 +23,7 @@ function Register() {
             {error !== null && <div className="py-4 bg-red-600 w-full text-white text-center mb-3">{error}</div>}
 
             <form className="log-in-container">
-                <h1>Register</h1>
-
+              
                 <label htmlFor="email" className="email-login">Email</label>
                 <input
                     type="email"
@@ -61,7 +60,7 @@ function Register() {
                     name="Submit"
                     className="submit-login"
                     onClick={(event) => { signIUpWithEmailAndPasswordHandler(event, email, password) }}>
-                    Submit
+                    Register
                         </button>
 
                 <br />

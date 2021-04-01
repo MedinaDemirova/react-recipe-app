@@ -1,27 +1,31 @@
 .login{
    height: 70vh;
     width: 100%;
-    display:flex;
+    display: flex;
    background-color: whitesmoke;
-justify-content: center;
+
+
 }
 
 .log-in-container{
+    display: flex;
    display:table-column;
    text-align: center;
     max-height: 10vh;
     width: 20h;
+    margin: 3%;
   
    
 }
-.log-in-container h1{
-    padding: 4vh;
-}
+
 
 .email-login, .password-login{
 font-size: 3vh;    
 display: flex;
 justify-content: center;
+text-align: center;
+align-items: center;
+width: 20vw;
 margin: 1.5vh;
 }
 
@@ -59,10 +63,10 @@ input.email-login ,input.password-login{
 
 .auth-error{
     color: red;
-    font-size: 3vh;
-    display: inline;
+    font-size: 2vh;
     text-align: center;
-    margin:3vh;
+    width: 50vh;
+    margin: 2%;
 
 }
 
