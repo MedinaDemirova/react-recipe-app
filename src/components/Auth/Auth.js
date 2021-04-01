@@ -5,7 +5,7 @@ import ProfilePage from ".//Profile/ProfilePage";
 import Login from ".//Login/Login";
 import Register from ".//Register/Register";
 
-function Auth(validatePersonalData){
+function Auth({validatePersonalData, setUser}){
 
     return(
         <>
@@ -21,6 +21,7 @@ function Auth(validatePersonalData){
         <Route path="/auth/login">
           <Login
             validatePersonalData={validatePersonalData}
+            setUser = {setUser}
           />
         </Route>
         </>

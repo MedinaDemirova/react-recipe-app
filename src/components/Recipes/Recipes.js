@@ -15,7 +15,7 @@ import DessertsSection from '../desserts/DessertSection';
 import MainMenu from "../menu/MainMenu";
 
 
-function Recipes() {
+function Recipes({ user, setUser }) {
 
     const [sortCriteria, setSortCriteria] = useState('A-Z');
     const [searchCategory, setSearchCategory] = useState('');
@@ -42,7 +42,10 @@ function Recipes() {
                 setCounter={setCounter}
                 setQuery={setQuery}
             />
-            <MainMenu />
+            <MainMenu
+                user={user}
+                setUser={setUser}
+            />
             <Route path="/">
                 <SortRecipes
                     setSortCriteria={setSortCriteria}
