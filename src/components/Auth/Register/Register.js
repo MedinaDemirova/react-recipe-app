@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ".//Register.css";
 import { Link } from "react-router-dom";
+import { auth } from '../../../firebase';
 
 function Register() {
     const [email, setEmail] = useState('');
@@ -8,22 +9,39 @@ function Register() {
     const [repassword, setRePassword] = useState('');
     const [error, setError] = useState('');
 
-    const signIUpWithEmailAndPasswordHandler = (e, email, password) => { e.preventDefault() };
+    async function signUpWithEmailAndPasswordHandler(e, email, password, repassword) {
+        e.preventDefault();
+        console.log(password)
+        console.log(repassword)
+        if (password === repassword && /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email)) {
+            try {
+                let user = await auth.createUserWithEmailAndPassword(email, password);
+                //localStorage.setItem("user", user.user.refreshToken);
+                //localStorage.setItem("email", user.user.email);
+                //setUser({ email: user.user.email, token: user.user.refreshToken });
+                console.log(user)
+            } catch (err) {
+                setError(err.message)
+            }
+        } else {
+             setError("Valid email and password required!")
+        }
+    };
 
     function emailHandler(e) { setEmail(e.target.value) };
-
     function passwordHandler(e) { setPassword(e.target.value) };
+    function rePasswordHandler(e) { setRePassword(e.target.value) };
 
-    function rePasswordHandler(e) {setRePassword(e.target.value)};
+    function checkIfPasswordsMatches(password, repassword) { if (password !== repassword) return setError("Passwords must matches!") };
+    function validateEmail(email) { if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email)) return setError("Invaid email!") };
 
 
     return (
         <div className="login" >
 
-            {error !== null && <div className="py-4 bg-red-600 w-full text-white text-center mb-3">{error}</div>}
-
             <form className="log-in-container">
-              
+                {error !== null && <div className="auth-error">{error}</div>}
+
                 <label htmlFor="email" className="email-login">Email</label>
                 <input
                     type="email"
@@ -31,6 +49,7 @@ function Register() {
                     className="email-login"
                     required
                     onChange={emailHandler}
+                    onBlur={validateEmail}
                     value={email}
                     placeholder="E.g: faruq123@gmail.com" />
 
@@ -45,21 +64,23 @@ function Register() {
                     placeholder="Your Password"
                     onChange={passwordHandler} />
 
-                <label htmlFor="re-password" className="password-login">Password</label>
+                <label htmlFor="repassword" className="password-login">Repeat password</label>
                 <input
                     type="password"
-                    name="re-password"
+                    name="repassword"
                     required
                     className="password-login"
                     value={repassword}
                     placeholder="Repeat Password"
-                    onChange={rePasswordHandler} />    
+                    onChange={rePasswordHandler}
+                    onBlur={checkIfPasswordsMatches} />
+
 
                 <button
                     type="submit"
                     name="Submit"
                     className="submit-login"
-                    onClick={(event) => { signIUpWithEmailAndPasswordHandler(event, email, password) }}>
+                    onClick={(event) => { signUpWithEmailAndPasswordHandler(event, email, password, repassword) }}>
                     Register
                         </button>
 
@@ -70,16 +91,9 @@ function Register() {
                         Sign in here
               </Link>
                 </p>
-
-
-
-
             </form>
-
-
         </div>
     )
 }
-
 
 export default Register

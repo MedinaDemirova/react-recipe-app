@@ -57,3 +57,11 @@
      font-size: 2.5vh;
  }
  
+ .auth-error{
+    color: red;
+    font-size: 2vh;
+    text-align: center;
+    width: 50vh;
+    margin: 2%;
+
+}

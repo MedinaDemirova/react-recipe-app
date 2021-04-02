@@ -34,11 +34,7 @@ function Login({ setUser }) {
     return (
         <div className="login" >
 
-
-
             <form className="log-in-container">
-                {error !== null && <div className="auth-error">{error}</div>}
-
 
                 <label htmlFor="email" className="email-login">Email</label>
                 <input
@@ -49,7 +45,6 @@ function Login({ setUser }) {
                     onChange={emailHandler}
                     value={email}
                     placeholder="E.g: faruq123@gmail.com" />
-
 
                 <label htmlFor="password" className="password-login">Password</label>
                 <input
