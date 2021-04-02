@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import ".//Login.css";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { auth } from '../../../firebase';
 import { validatePersonalData } from "../../../services/validator";
 
 
 function Login({ setUser }) {
+    let history = useHistory();
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -19,7 +20,7 @@ function Login({ setUser }) {
                 localStorage.setItem("user", user.user.refreshToken);
                 localStorage.setItem("email", user.user.email);
                 setUser({ email: user.user.email, token: user.user.refreshToken });
-
+                history.push('/');
             } catch (err) {
                 setError(err.message)
             }
@@ -33,8 +34,8 @@ function Login({ setUser }) {
 
     return (
         <div className="login" >
-
             <form className="log-in-container">
+                {error !== null && <div className="auth-error">{error}</div>}
 
                 <label htmlFor="email" className="email-login">Email</label>
                 <input

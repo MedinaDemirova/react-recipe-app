@@ -18,21 +18,16 @@
    align-items: center;
 }
 
-
 .email-login, .password-login{
 font-size: 3vh;    
 display: flex;
 text-align: center;
-width: 25vw;
 margin: 1.5vh;
 }
 
-
-
-
 input.email-login ,input.password-login{
     border: none;
-    max-width: 50vw;
+    width: 100%;
     background: transparent;
     border-bottom: 1px solid darkgreen ;
 }
@@ -69,9 +64,3 @@ input.email-login ,input.password-login{
 
 }
 
-@media screen and (max-width: 450px) 
-{
-  .email-login, .password-login{width: 80vw}
-
-input{width:80vw}
-}
