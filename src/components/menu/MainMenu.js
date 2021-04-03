@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
-import ".//MainMenu.css"
+import ".//MainMenu.css";
+import { auth } from '../../firebase';
 
 function MainMenu({ user, setUser }) {
 
     function signUserOut() {
         localStorage.removeItem("user");
         localStorage.removeItem("email");
+        auth.signOut();
         setUser({});
 
     }
