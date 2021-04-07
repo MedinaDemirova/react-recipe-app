@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState,useContext } from 'react';
 import ".//Register.css";
 import { Link, useHistory } from "react-router-dom";
 import { auth } from '../../../firebase';
+import UserContext from '../../contexts/UserContext';
 
 function Register() {
+    let [user, setUser] = useContext(UserContext);
     let history = useHistory();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -15,7 +17,11 @@ function Register() {
         if (password === repassword && /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email)) {
             try {
                 await auth.createUserWithEmailAndPassword(email, password);
-                history.push("/auth/login");
+                let user = await auth.signInWithEmailAndPassword(email, password);
+                localStorage.setItem("user", user.user.refreshToken);
+                localStorage.setItem("email", user.user.email);
+                setUser({ email: user.user.email, token: user.user.refreshToken });
+                history.push("/auth/my-profile");
             } catch (err) {
                 setError(err.message)
             }

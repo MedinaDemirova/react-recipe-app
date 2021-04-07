@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import './App.css';
 
 import { checkIfUser } from "./services/authService";
+import UserContext from "./components/contexts/UserContext";
 
 //Components
 import Recipes from './components/Recipes/Recipes';
@@ -13,6 +14,8 @@ import Auth from "./components/Auth/Auth";
 
 
 const App = () => {
+
+
   const [user, setUser] = useState({});
 
   useEffect(() => {
@@ -21,31 +24,25 @@ const App = () => {
 
 
   return (
-    <div className="app">
+    <UserContext.Provider value = {[user,setUser]}>
+      <div className="app">
 
-      <Switch>
-        <Route path="/auth">
-          <MainMenu 
-          user = {user}
-          setUser= {setUser}
-          />
-          <Auth
-            setUser={setUser}
-          />
-        </Route>
+        <Switch>
+          <Route path="/auth">
+            <MainMenu/>
+            <Auth />
+          </Route>
 
-        <Route path="/">
-          <Recipes 
-          user = {user}
-          setUser= {setUser}
-          />
-        </Route>
+          <Route path="/">
+            <Recipes/>
+          </Route>
 
-        <Route render={() => <Error />} />
-      </Switch>
+          <Route render={() => <Error />} />
+        </Switch>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </UserContext.Provider >
   )
 }
 

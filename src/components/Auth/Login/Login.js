@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import ".//Login.css";
 import { Link, useHistory } from "react-router-dom";
 import { auth } from '../../../firebase';
 import { validatePersonalData } from "../../../services/validator";
+import UserContext from '../../contexts/UserContext';
 
 
-function Login({ setUser }) {
+function Login() {
     let history = useHistory();
+    let [user,setUser]= useContext(UserContext);
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -20,7 +22,7 @@ function Login({ setUser }) {
                 localStorage.setItem("user", user.user.refreshToken);
                 localStorage.setItem("email", user.user.email);
                 setUser({ email: user.user.email, token: user.user.refreshToken });
-                history.push('/');
+                history.push('/auth/my-profile');
             } catch (err) {
                 setError(err.message)
             }
@@ -72,13 +74,7 @@ function Login({ setUser }) {
                         Sign up here
           </Link>
                 </p>
-
-
-
-
             </form>
-
-
         </div>
     )
 }

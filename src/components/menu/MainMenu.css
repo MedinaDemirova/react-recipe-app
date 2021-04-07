@@ -48,8 +48,13 @@ top: 1%;
   position: absolute;
   right: 8%;
   top: 1%;
-  color: rgb(165, 71, 42);
+  color: rgb(177, 8, 8);
   text-decoration: underline;
+}
+
+.hello-user:hover{
+  cursor: pointer;
+  color: black;
 }
 
 @media screen and (max-width: 755px) 

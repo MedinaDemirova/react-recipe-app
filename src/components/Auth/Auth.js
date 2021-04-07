@@ -1,16 +1,19 @@
 import {Route} from "react-router-dom";
+import {useContext} from "react";
 
 //Components
 import ProfilePage from ".//Profile/ProfilePage";
 import Login from ".//Login/Login";
 import Register from ".//Register/Register";
+import UserContext from "../contexts/UserContext";
 
-function Auth({validatePersonalData, setUser}){
+function Auth(){
+
+  let [user] = useContext(UserContext);
 
     return(
         <>
         <Route path= "/auth/my-profile">
-        user?
         <ProfilePage /> 
         </Route>
 
@@ -19,10 +22,7 @@ function Auth({validatePersonalData, setUser}){
         </Route>
 
         <Route path="/auth/login">
-          <Login
-            validatePersonalData={validatePersonalData}
-            setUser = {setUser}
-          />
+          <Login />
         </Route>
         </>
     )
