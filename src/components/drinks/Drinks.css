@@ -119,3 +119,12 @@
      font-family: 'Times New Roman', Times, serif;
      font-size: 2.5vh;
    }
+
+   
+  @media screen and (max-width: 420px) 
+  {
+    .show-drink{display: inline-block;text-align: center;padding-bottom: 3vh;}
+    .show-drink ol {width: 80vw}
+    .middle {width: 80vw;text-align: center;}
+    .middle h1 {max-width: 80vw}
+  }
