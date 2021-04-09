@@ -1,4 +1,4 @@
-import React, { useState,useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import ".//Register.css";
 import { Link, useHistory } from "react-router-dom";
 import { auth } from '../../../firebase';
@@ -34,7 +34,7 @@ function Register() {
     function passwordHandler(e) { setPassword(e.target.value) };
     function rePasswordHandler(e) { setRePassword(e.target.value) };
     function checkIfPasswordsMatches(password, repassword) { if (password !== repassword) return setError("Passwords must matches!") };
-    function validateEmail(email) { if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email)) return setError("Invaid email!") };
+    function validateEmail(email) { if (/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email) == false) return setError("Invalid email!") };
 
     return (
         <div className="login" >

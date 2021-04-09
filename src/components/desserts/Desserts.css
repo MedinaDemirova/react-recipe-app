@@ -89,12 +89,15 @@ cursor: pointer;
     overflow: auto;
     width: auto;
   }
+
   
   .show-dessert img{
     max-height: 32vw;
     border-radius: 1rem;
     border:solid 2px rgb(236, 139, 155);
   }
+
+
   
   .middle{
     padding-left: 2vh;
@@ -123,4 +126,12 @@ cursor: pointer;
   .show-dessert li{
     font-family: 'Times New Roman', Times, serif;
     font-size: 2.5vh;
+  }
+
+  @media screen and (max-width: 420px) 
+  {
+    .show-dessert{display: inline-block;text-align: center;padding-bottom: 3vh;}
+    .show-dessert ol {width: 80vw}
+    .middle {width: 80vw;text-align: center;}
+    .middle h1 {max-width: 80vw}
   }
