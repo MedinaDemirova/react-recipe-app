@@ -13,6 +13,7 @@
     height: 8vh;
     color: rgb(10, 10, 10);
     padding-top: 10vh;
+    font-size: 4vh;
     font-weight: 800;
     padding-left:2vw;
     padding-right:2vw; 
@@ -26,15 +27,40 @@
 .user-info-image{
     position: initial;
     width: 100vw;
-    height: 50vh;
+    height: 45vh;
     background-image:url("https://images.pexels.com/photos/142520/pexels-photo-142520.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
     background-repeat: no-repeat;
-    background-size: cover;
-   
+    background-size: cover;  
+}
+
+.profile-picture{
+    display: flex;
+    margin-top: 4vh;
+    height: 13vw;
+    width: 13vw;
+    border-radius: 10rem;
+    background: whitesmoke;
+    text-align: center;
+    font-size: 2.5vh;
+    font-weight: 800;
+    color: green;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    text-align:center;
+    left:45%;
+    position:relative;
+    box-shadow: -1px 8px 20px -3px rgba(77,99,87,0.78);
 }
 
 .user-favourites-list{
    color: red;
   
    height: 60vh;
+}
+
+@media screen and (max-width: 755px) 
+{
+    .user-info-sub{display: none}
+    .profile-picture{display: none}
 }
