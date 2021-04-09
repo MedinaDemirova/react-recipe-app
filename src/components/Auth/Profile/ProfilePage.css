@@ -4,15 +4,33 @@
     min-height: 72vh;
     font-size: 1.5vh;
     text-align: center;
-   background: rgb(241, 231, 212);
+   background: whitesmoke;
     background-size: cover;
     
 }
 
 .user-info{
     height: 8vh;
-    color: rgb(5, 73, 15);
-    padding: 3vh;
+    color: rgb(10, 10, 10);
+    padding-top: 10vh;
+    font-weight: 800;
+    padding-left:2vw;
+    padding-right:2vw; 
+}
+
+.user-info-sub{
+    font-size: 3vh;
+    font-weight: 700;
+}
+
+.user-info-image{
+    position: initial;
+    width: 100vw;
+    height: 50vh;
+    background-image:url("https://images.pexels.com/photos/142520/pexels-photo-142520.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    background-repeat: no-repeat;
+    background-size: cover;
+   
 }
 
 .user-favourites-list{
