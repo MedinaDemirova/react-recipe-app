@@ -36,11 +36,11 @@
 .profile-picture{
     display: flex;
     margin-top: 4vh;
-    height: 13vw;
-    width: 13vw;
+    height: 11vw;
+    width: 11vw;
     border-radius: 10rem;
     background: whitesmoke;
-    font-size: 2.5vh;
+    font-size: 1.6vw;
     font-weight: 800;
     color: green;
     align-items: center;
@@ -50,13 +50,26 @@
 }
 
 .user-favourites-list{
-   color: red;
-  
-   height: 60vh;
+    padding-top: 13vh;
+    padding-bottom: 13vh;
+   height: auto;
+   display: flex;
+   justify-content: space-around;
+   text-align: center;
+}
+
+.favourites-box{
+    border:solid 1px black;
+    width: 20vw;
+    height: 30vh;
+   
 }
 
 @media screen and (max-width: 755px) 
 {
     .user-info-sub{display: none}
     .profile-picture{display: none}
+    .user-favourites-list{display:grid;}
+    .favourites-box{ width: 70vw;
+        height: 10vh;}
 }
