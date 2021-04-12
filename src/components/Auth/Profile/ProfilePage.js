@@ -1,25 +1,20 @@
-import UserContext from "../../contexts/UserContext";
 import { useContext, useState, useEffect } from 'react';
 import ".//ProfilePage.css";
 import { Link, Route } from "react-router-dom";
-import { firestore } from "../../../firebase";
+import { getFavRecipes } from "../../../services/firestoreService";
+import UserContext from '../../contexts/UserContext';
+import Recipe from "../../Recipes/Recipe";
 
 function ProfilePage() {
-    let [user, setUser] = useContext(UserContext);
     let [favs, setFavs] = useState([]);
+    let [user,] = useContext(UserContext);
 
-    async function getFavRecipes() {
-        const response = firestore.collection('recipes');
-        const data = await response.get();
-        console.log(data.docs)
-        data.docs.forEach(item => {
-            setFavs([...favs, item.data()])
-        })
+    useEffect(() => { getFavRecipesHandler(); }, [])
+
+    async function getFavRecipesHandler() {
+        const recipes = await getFavRecipes(`${localStorage.email}`);
+        setFavs(recipes);
     };
-
-    useEffect(() => {
-        getFavRecipes();
-    }, [])
 
     return (
         <div className="profile-page">
@@ -30,23 +25,32 @@ function ProfilePage() {
                 <Link to="/auth/my-profile"> <div className="profile-picture" > {user.email ? user.email.split("@")[0].toUpperCase() : null}</div></Link>
             </div>
 
-            <Route path="/auth/my-profile/favourites">
-                {favs.length == 0 &&
+            <Route path="/auth/my-profile/favourites" favs={favs}>
+                {favs.length === 0 &&
                     <div className="user-favourites-list">
                         <div className="fav-info">No recipes added in you favourite list yet.</div>
                         <Link to="/"> <div className="favourites-box second">Find your new best recipe</div></Link>
                     </div>
                 }
-
+                {console.log(favs)}
                 {favs.length > 0 &&
-                    <div className="user-favourites-list">{favs}</div>
-                
+                    favs.map(fav =>
+                        <div className="fav-rec-container">
+
+                            <h3>{fav.label}</h3>
+                            <span>Calories: {fav.calories}</span>
+                            <span>Weight: {fav.totalWeight}</span>
+                            <span>Ingredients:</span>
+                            <div>{fav.ingredients}</div>
+
+                        </div>
+                    )
                 }
             </Route>
 
             <Route path="/auth/my-profile" exact>
                 <div className="user-favourites-list">
-                    <Link to="/auth/my-profile/favourites"><div onClick={getFavRecipes} className="favourites-box first">My favourites</div></Link>
+                    <Link to="/auth/my-profile/favourites"><div className="favourites-box first">My favourites</div></Link>
                     <Link to="/"> <div className="favourites-box second">Find your new best recipe</div></Link>
                     <Link to="/drinks"> <div className="favourites-box third">Try out new cocktail tonight</div></Link>
                 </div>

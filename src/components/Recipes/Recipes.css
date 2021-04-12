@@ -77,17 +77,16 @@
   /* Show recipe */
   .show-recipe{
     text-align: center;
-    background: url("https://images.pexels.com/photos/349609/pexels-photo-349609.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    background: url("https://images.pexels.com/photos/733857/pexels-photo-733857.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
     background-size: cover;
     height: 70%;
     width:70%;
     position:fixed;
     top:20%;
     right:10%;
-    box-shadow: inset 0px 0px 30px 10px  rgb(122, 126, 123);
-   
-    border-radius: 2rem;
-  padding: 10px;
+    border-radius: 1rem;
+    padding: 20px;
+    padding-top: 30px;
   }
     
   .show-recipe-header{
@@ -127,7 +126,7 @@
   .show-recipe-wigth{
     font-size: 3vh;
   }
-  
+    
   .show-right{
     text-align: center;
     align-content: center;
@@ -156,7 +155,7 @@
     max-height: 40%;
     margin-top: 4%;
     border-radius: 2rem;
-    box-shadow: 0px 0px 10px 3px  rgb(51, 65, 41);
+    box-shadow: 0px 0px 10px 3px  rgb(232, 235, 231);
   }
   
   .back-to-rec{
@@ -169,7 +168,23 @@
     font-size: 3vh;
     align-content: center;
   }
+
+  .add-to-favs{
+    color: green;
+    font-weight: 500;
+    text-decoration: underline;
+  }
+  .add-to-favs:hover{
+    cursor: pointer;
+  }
+
   .back-to-rec:hover{
     cursor: pointer;
     font-size: 3.1vh;
+  }
+
+  @media screen and (max-width: 755px) {
+    .show-recipe{
+     
+    }
   }

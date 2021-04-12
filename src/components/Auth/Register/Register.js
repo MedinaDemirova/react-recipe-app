@@ -20,7 +20,7 @@ function Register() {
                 let user = await auth.signInWithEmailAndPassword(email, password);
                 localStorage.setItem("user", user.user.refreshToken);
                 localStorage.setItem("email", user.user.email);
-                setUser({ email: user.user.email, token: user.user.refreshToken });
+                setUser({ email: user.user.email, token: user.user.refreshToken, creator:user.id });
                 history.push("/auth/my-profile");
             } catch (err) {
                 setError(err.message)

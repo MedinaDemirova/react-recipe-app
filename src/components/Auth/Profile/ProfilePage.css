@@ -103,6 +103,23 @@ background-size: cover;
    background: rgb(215, 228, 198)
 
 }
+.fav-rec-container{
+    border: solid 1px darkgreen;
+    font-family: 'Times New Roman', Times, serif;
+    width: 20vw;
+    height: 50vh;
+   display:grid;
+   position: relative;
+   align-items: center;
+   justify-content: center;
+   font-size: 1.5vh;
+   margin: 2vh;
+}
+
+.fav-rec-container span{
+    font-size: 1 vh;
+    color: darkgreen;
+}
 
 @media screen and (max-width: 755px) 
 {
