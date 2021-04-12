@@ -59,10 +59,35 @@
 }
 
 .favourites-box{
-    border:solid 1px black;
+  font-family: 'Times New Roman', Times, serif;
     width: 20vw;
     height: 30vh;
-   
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 3.5vh;
+   font-weight: 500;
+}
+
+.favourites-box:hover{
+    font-size: 3.6vh;
+    cursor: pointer;
+    color: rgb(1, 65, 1);
+}
+
+ .first{
+background-image: url("https://images.pexels.com/photos/3850613/pexels-photo-3850613.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+background-size: cover;
+}
+
+.second{
+    background-image: url("https://images.pexels.com/photos/1194434/pexels-photo-1194434.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    background-size: cover;
+}
+
+.third{
+    background-image: url("https://images.pexels.com/photos/5947028/pexels-photo-5947028.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    background-size: cover;
 }
 
 @media screen and (max-width: 755px) 
@@ -72,4 +97,5 @@
     .user-favourites-list{display:grid;}
     .favourites-box{ width: 70vw;
         height: 10vh;}
+    .first, .second, .third{background: none}    
 }
