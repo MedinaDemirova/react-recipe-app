@@ -1,26 +1,37 @@
 import UserContext from "../../contexts/UserContext";
-import { useContext } from 'react';
+import { useContext,useState, useEffect } from 'react';
 import ".//ProfilePage.css";
 import { Link, Route } from "react-router-dom";
-
+import { firestore } from "../../../firebase";
 
 function ProfilePage() {
     let [user, setUser] = useContext(UserContext);
+    let [favs, setFavs] = useState([]);
 
-    function getFavRecipes() {
+    async function getFavRecipes() {
+        const response = firestore.collection('recipes');
+        const data = await response.get();
+        console.log(data.docs)
+        data.docs.forEach(item => {
+            setFavs([...favs, item.data()])
+        })
+    };
 
-    }
+    useEffect(() => {
+        getFavRecipes();
+    }, [])
+
     return (
         <div className="profile-page">
 
             <div className="user-info-image">
                 <div className="user-info">"Cooking is like love. It should be entered into with abandon or not at all."</div>
                 <div className="user-info-sub">Harriet Van Horne</div>
-               <Link to="/auth/my-profile"> <div className="profile-picture" > {user.email ? user.email.split("@")[0].toUpperCase() : null}</div></Link>
+                <Link to="/auth/my-profile"> <div className="profile-picture" > {user.email ? user.email.split("@")[0].toUpperCase() : null}</div></Link>
             </div>
 
             <Route path="/auth/my-profile/favourites">
-            <div className="user-favourites-list">Fav</div>
+                <div className="user-favourites-list">{favs}</div>
             </Route>
 
             <Route path="/auth/my-profile" exact>
