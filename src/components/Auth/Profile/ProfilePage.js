@@ -1,5 +1,5 @@
 import UserContext from "../../contexts/UserContext";
-import { useContext,useState, useEffect } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import ".//ProfilePage.css";
 import { Link, Route } from "react-router-dom";
 import { firestore } from "../../../firebase";
@@ -31,7 +31,17 @@ function ProfilePage() {
             </div>
 
             <Route path="/auth/my-profile/favourites">
-                <div className="user-favourites-list">{favs}</div>
+                {favs.length == 0 &&
+                    <div className="user-favourites-list">
+                        <div className="fav-info">No recipes added in you favourite list yet.</div>
+                        <Link to="/"> <div className="favourites-box second">Find your new best recipe</div></Link>
+                    </div>
+                }
+
+                {favs.length > 0 &&
+                    <div className="user-favourites-list">{favs}</div>
+                
+                }
             </Route>
 
             <Route path="/auth/my-profile" exact>

@@ -56,6 +56,11 @@
     font-size: 3vh;
     padding: 2px;
   }
+
+  .cook-it:hover{
+    cursor: pointer;
+    font-size: 3.1vh;
+  }
   
   .show-more{
     margin: 20px;
@@ -116,11 +121,11 @@
   }
   
   .show-recipe-calories{
-    font-size: 4vh;
+    font-size: 3vh;
   }
   
   .show-recipe-wigth{
-    font-size: 4vh;
+    font-size: 3vh;
   }
   
   .show-right{
@@ -163,5 +168,8 @@
     height: 5vh;
     font-size: 3vh;
     align-content: center;
-    
+  }
+  .back-to-rec:hover{
+    cursor: pointer;
+    font-size: 3.1vh;
   }
