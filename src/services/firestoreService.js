@@ -11,6 +11,15 @@ export async function addFavRecipe(data) {
     }
 };
 
+export async function checkIfAddedInFavourites(label) {
+    try{
+    const res = await firestore.collection(`${localStorage.email}`).doc(`${label}`).get();
+    return res.exist ? true : false;
+    }catch(err){
+        console.log(err)
+    }
+    
+}
 
 export async function getFavRecipes(user) {
     let recipes = [];

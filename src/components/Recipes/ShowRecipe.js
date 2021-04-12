@@ -1,21 +1,22 @@
-import { addFavRecipe } from "../../services/firestoreService";
+import { addFavRecipe, checkIfAddedInFavourites } from "../../services/firestoreService";
 import React, { useContext } from "react";
 import UserContext from "../contexts/UserContext";
 
+
 function ShowRecipe({ recipe, setShowRecipe }) {
 
-  let [user, setUser] = useContext(UserContext);
+  let [user,] = useContext(UserContext);
 
+  //let isSaved =  checkIfAddedInFavourites(recipe.label);
+  //console.log(isSaved)
   function setDisplayToNone() {
     setShowRecipe(false);
   }
 
   async function addToFavsHandler() {
     try {
-      let data = { label: recipe.label, image: recipe.image, calories: recipe.calories, totalWeight: recipe.totalWeight,ingredients:recipe.ingredientLines, creator: user.email };
+      let data = { label: recipe.label, image: recipe.image, calories: recipe.calories, totalWeight: recipe.totalWeight, ingredients: recipe.ingredientLines, creator: user.email };
       await addFavRecipe(data);
-
-
     } catch (err) {
       console.log(err)
     }
@@ -29,7 +30,8 @@ function ShowRecipe({ recipe, setShowRecipe }) {
       <div className="show-main">
         <div className="show-left">
           <img className="show-recipe-image" src={recipe.image} alt="recipe" />
-          <p onClick={addToFavsHandler} className="show-recipe-calories add-to-favs">Add to favourites</p>
+          {user.email &&
+            <p onClick={addToFavsHandler} className="show-recipe-calories add-to-favs">Add to favourites</p>}
           <p className="show-recipe-calories">  Calories: {(recipe.calories).toFixed(2)}</p>
           <p className="show-recipe-wigth">  Total weight: {(recipe.totalWeight).toFixed(2)}</p>
           <button className="back-to-rec" onClick={setDisplayToNone}>Cancel</button>
