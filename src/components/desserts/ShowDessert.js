@@ -6,7 +6,7 @@ import { addFavRecipe } from "../../services/firestoreService";
 function ShowDessert({ dessertsRecipes }) {
 
     let [user,] = useContext(UserContext);
-    
+
     const { label } = useParams();
 
     let current = dessertsRecipes.filter((dessert) => dessert.recipe.label === label);
@@ -44,6 +44,7 @@ function ShowDessert({ dessertsRecipes }) {
                     )
                 ) : null}
             </ol>
+
         </div>
     )
 }

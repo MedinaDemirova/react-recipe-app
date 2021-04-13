@@ -9,7 +9,7 @@ function ProfilePage() {
     let [favs, setFavs] = useState([]);
     let [user,] = useContext(UserContext);
 
-    useEffect(() => { getFavRecipesHandler(); }, [])
+    useEffect(() => { getFavRecipesHandler(); }, [favs])
 
     async function getFavRecipesHandler() {
         const recipes = await getFavRecipes(`${localStorage.email}`);
@@ -26,14 +26,18 @@ function ProfilePage() {
             </div>
 
             <Route path="/auth/my-profile/favourites" favs={favs}>
+            
                 {favs.length === 0 &&
                     <div className="user-favourites-list">
                         <div className="fav-info">No recipes added in you favourite list yet.</div>
                         <Link to="/"> <div className="favourites-box second">Find your new best recipe</div></Link>
                     </div>
                 }
-                {console.log(favs)}
-                {favs.length > 0 && <Favourites favs={favs} />}
+              
+                {favs.length > 0 &&
+                    <Favourites
+                        favs={favs}
+                        setFavs={setFavs} />}
             </Route>
 
             <Route path="/auth/my-profile" exact>

@@ -161,6 +161,13 @@ padding-bottom: 2vh;
 
 }
 
+.remove-from-favs{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+    font-size: 2.3vh;
+    margin: 2vh;
+    
+}
+
 @media screen and (max-width: 755px) 
 {
     .user-info-sub{display: none}

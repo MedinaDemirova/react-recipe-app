@@ -1,4 +1,11 @@
+import { removeFavRecipe } from "../../../services/firestoreService";
+import UserContext from '../../contexts/UserContext';
+import {useContext} from "react"
+
 function Favourites({ favs }) {
+    let [user,] = useContext(UserContext);
+
+    const removeRecipeFromFavs = async (user,label) => { await removeFavRecipe(user,label); }
 
     return (
         <div className="user-favourites">
@@ -8,8 +15,9 @@ function Favourites({ favs }) {
                     <span>Calories: {fav.calories.toFixed(2)}  - Weight: {fav.totalWeight.toFixed(2)}</span>
                     <h4 >Ingredients:</h4>
                     <ol>
-                        {fav.ingredients.map(product => <li key= {product}>{product}</li>)}
+                        {fav.ingredients.map(product => <li key={product}>{product}</li>)}
                     </ol>
+                    <button onClick={() => { removeRecipeFromFavs(user.email,fav.label) }} className="remove-from-favs">Remove</button>
                 </div>
             )}
         </div>
