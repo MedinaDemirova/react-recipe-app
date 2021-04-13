@@ -172,6 +172,8 @@
   .add-to-favs{
     color: green;
     font-weight: 500;
+    font-size: 2.5vh;
+    margin: 1vh;
     text-decoration: underline;
   }
   .add-to-favs:hover{

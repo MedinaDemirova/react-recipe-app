@@ -26,7 +26,7 @@
 
 .user-info-image{
     position: initial;
-    width: 100vw;
+    width: 100%;
     height: 45vh;
     background-image:url("https://images.pexels.com/photos/142520/pexels-photo-142520.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
     background-repeat: no-repeat;
@@ -50,13 +50,15 @@
 }
 
 .user-favourites-list{
-    padding-top: 13vh;
-    padding-bottom: 13vh;
-   height: auto;
-   display: flex;
+    padding-top: 4vh;
+    width:100%;
+    height: 50vh;
+    display: flex;
+    align-items: center;
    justify-content: space-around;
-   text-align: center;
+  
 }
+
 
 .favourites-box{
   font-family: 'Times New Roman', Times, serif;
@@ -103,31 +105,72 @@ background-size: cover;
    background: rgb(215, 228, 198)
 
 }
-.fav-rec-container{
-    border: solid 1px darkgreen;
-    font-family: 'Times New Roman', Times, serif;
-    width: 20vw;
+/* Favourites component */
+
+.user-favourites{
+    padding:2vh;
+    padding-top: 4vh;
+    width:auto;
     height: 50vh;
-   display:grid;
+    display: flex;
+    align-items: center;
+   justify-content: flex-start;
+    overflow: auto;
+}
+
+.fav-rec-container{
+   font-family: 'Times New Roman', Times, serif;
+   min-width: 300px;
+   max-width: 300px;
+   height: 300px;
+   display:inline-block;
    position: relative;
    align-items: center;
    justify-content: center;
    font-size: 1.5vh;
+   box-shadow: -1px 8px 20px -3px rgba(77,99,87,0.78);
+   overflow-y: auto;
    margin: 2vh;
+   padding: 2vh;
+}
+
+.fav-rec-container h3{
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif  ;
+font-size: 3vh;
+padding-bottom: 2vh;
 }
 
 .fav-rec-container span{
-    font-size: 1 vh;
+    font-size:2vh;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: darkgreen;
+   
+}
+
+.fav-rec-container h4{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+    font-size: 2.3vh;
+    color: darkgreen;
+    margin-top: 2vh;
+}
+
+.fav-rec-container li{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+    font-size: 2.3vh;
+   list-style:  none;
+
 }
 
 @media screen and (max-width: 755px) 
 {
     .user-info-sub{display: none}
     .profile-picture{display: none}
-    .user-favourites-list{display:grid;}
+    .user-favourites-list{display:grid; padding-top: 1vh;}
     .favourites-box, .fav-info{ width: 70vw;
         height: 10vh;}
     .fav-info{border: none;}    
-    .first, .second, .third, .fav-info{background: none; border-bottom: solid 1px darkgreen}    
+    .first, .second, .third, .fav-info{background: none; border-bottom: solid 1px darkgreen}  
+    ::-webkit-scrollbar{
+        display: none;
+    }  
 }

@@ -3,7 +3,7 @@ import ".//ProfilePage.css";
 import { Link, Route } from "react-router-dom";
 import { getFavRecipes } from "../../../services/firestoreService";
 import UserContext from '../../contexts/UserContext';
-import Recipe from "../../Recipes/Recipe";
+import Favourites from "../../Auth/Profile/Favourites";
 
 function ProfilePage() {
     let [favs, setFavs] = useState([]);
@@ -33,19 +33,7 @@ function ProfilePage() {
                     </div>
                 }
                 {console.log(favs)}
-                {favs.length > 0 &&
-                    favs.map(fav =>
-                        <div className="fav-rec-container">
-
-                            <h3>{fav.label}</h3>
-                            <span>Calories: {fav.calories}</span>
-                            <span>Weight: {fav.totalWeight}</span>
-                            <span>Ingredients:</span>
-                            <div>{fav.ingredients}</div>
-
-                        </div>
-                    )
-                }
+                {favs.length > 0 && <Favourites favs={favs} />}
             </Route>
 
             <Route path="/auth/my-profile" exact>

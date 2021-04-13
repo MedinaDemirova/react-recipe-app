@@ -1,4 +1,4 @@
-import { addFavRecipe, checkIfAddedInFavourites } from "../../services/firestoreService";
+import { addFavRecipe} from "../../services/firestoreService";
 import React, { useContext } from "react";
 import UserContext from "../contexts/UserContext";
 
@@ -7,8 +7,6 @@ function ShowRecipe({ recipe, setShowRecipe }) {
 
   let [user,] = useContext(UserContext);
 
-  //let isSaved =  checkIfAddedInFavourites(recipe.label);
-  //console.log(isSaved)
   function setDisplayToNone() {
     setShowRecipe(false);
   }
