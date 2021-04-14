@@ -178,8 +178,17 @@
   }
   .add-to-favs:hover{
     cursor: pointer;
+    color: rgb(143, 177, 93);
   }
 
+.added{
+  color:rgb(11, 148, 34);
+  font-weight: 500;
+  font-size: 2.5vh;
+  margin: 1vh;
+
+  
+}
   .back-to-rec:hover{
     cursor: pointer;
     font-size: 3.1vh;

@@ -12,14 +12,15 @@ function ShowDessert({ dessertsRecipes }) {
     let current = dessertsRecipes.filter((dessert) => dessert.recipe.label === label);
     current = current[0].recipe || [];
 
-    async function addToFavsHandler() {
+    async function addToFavsHandler(e) {
         try {
             let data = { label: current.label, image: current.image, calories: current.calories, totalWeight: current.totalWeight, ingredients: current.ingredientLines, creator: user.email };
             await addFavRecipe(data);
+            e.target.innerHTML = "Added to favourites";
+            e.target.className = "added"
         } catch (err) {
             console.log(err)
         }
-        addFavRecipe(current)
     }
 
     //  do not load properly when open in another browser???

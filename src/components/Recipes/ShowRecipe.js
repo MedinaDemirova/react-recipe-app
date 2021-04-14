@@ -11,14 +11,16 @@ function ShowRecipe({ recipe, setShowRecipe }) {
     setShowRecipe(false);
   }
 
-  async function addToFavsHandler() {
+  async function addToFavsHandler(e) {
     try {
       let data = { label: recipe.label, image: recipe.image, calories: recipe.calories, totalWeight: recipe.totalWeight, ingredients: recipe.ingredientLines, creator: user.email };
       await addFavRecipe(data);
+      e.target.innerHTML = "Added to favourites";
+      e.target.className = "added"
     } catch (err) {
       console.log(err)
     }
-    addFavRecipe(recipe)
+
   }
 
   return (
