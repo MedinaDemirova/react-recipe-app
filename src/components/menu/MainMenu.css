@@ -57,6 +57,12 @@ top: 1%;
   color: black;
 }
 
+.time-component{
+  font-size: 2.5vh;
+  font-family: 'Times New Roman', Times, serif;
+  color: green;
+}
+
 @media screen and (max-width: 755px) 
 {
   .hello-user{right: 45%}

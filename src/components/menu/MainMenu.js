@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import ".//MainMenu.css";
 import { auth } from '../../firebase';
 import UserContext from "../contexts/UserContext";
+import Time from "../menu/Time.js";
 
 function MainMenu() {
 
@@ -19,6 +20,8 @@ function MainMenu() {
         <div className="main-menu">
 
             <Link to="/"> <div className="main-menu-link home">Home</div></Link>
+
+            <Time />
 
             <Link to="/auth/my-profile">  {user.email && <span className="hello-user">Hello, {user.email.split('@')[0]} </span>}</Link>
 
