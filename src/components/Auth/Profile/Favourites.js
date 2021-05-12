@@ -15,7 +15,7 @@ function Favourites({ favs }) {
                     <span>Calories: {fav.calories.toFixed(2)}  - Weight: {fav.totalWeight.toFixed(2)}</span>
                     <h4 >Ingredients:</h4>
                     <ol>
-                        {fav.ingredients.map(product => <li key={product}>{product}</li>)}
+                        {fav.ingredients.map(product => <li key={Math.random()}>{product}</li>)}
                     </ol>
                     <button onClick={() => { removeRecipeFromFavs(user.email,fav.label) }} className="remove-from-favs">Remove</button>
                 </div>
